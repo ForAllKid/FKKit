@@ -1,0 +1,43 @@
+PODS:
+  - EFFoundation (1.1.1):
+    - EFFoundation/Core (= 1.1.1)
+  - EFFoundation/Core (1.1.1)
+  - Kingfisher (4.10.1)
+  - KingfisherWebP (0.4.2):
+    - Kingfisher (~> 4.0)
+    - libwebp (>= 0.5.0)
+  - libwebp (1.0.3):
+    - libwebp/demux (= 1.0.3)
+    - libwebp/mux (= 1.0.3)
+    - libwebp/webp (= 1.0.3)
+  - libwebp/demux (1.0.3):
+    - libwebp/webp
+  - libwebp/mux (1.0.3):
+    - libwebp/demux
+  - libwebp/webp (1.0.3)
+  - SnapKit (4.2.0)
+
+DEPENDENCIES:
+  - EFFoundation
+  - Kingfisher
+  - KingfisherWebP
+  - SnapKit
+
+SPEC REPOS:
+  trunk:
+    - EFFoundation
+    - Kingfisher
+    - KingfisherWebP
+    - libwebp
+    - SnapKit
+
+SPEC CHECKSUMS:
+  EFFoundation: 26a2731ace3e22cf5f7bb45d28c6afbc945959dd
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  KingfisherWebP: 53632f3da248ccabd4999d775903d6ae0aaa7768
+  libwebp: 057912d6d0abfb6357d8bb05c0ea470301f5d61e
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+
+PODFILE CHECKSUM: 3eaaba379c3a3ca7ff3d9d262c44af4ab509ae21
+
+COCOAPODS: 1.8.4

@@ -1,0 +1,823 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		040E8E4F237E7372002F5B3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E8E4E237E7372002F5B3F /* AppDelegate.swift */; };
+		040E8E53237E7372002F5B3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E8E52237E7372002F5B3F /* ViewController.swift */; };
+		040E8E56237E7372002F5B3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040E8E54237E7372002F5B3F /* Main.storyboard */; };
+		040E8E58237E7375002F5B3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040E8E57237E7375002F5B3F /* Assets.xcassets */; };
+		040E8E5B237E7375002F5B3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040E8E59237E7375002F5B3F /* LaunchScreen.storyboard */; };
+		040E8E66237E7376002F5B3F /* KMNameSpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E8E65237E7376002F5B3F /* KMNameSpaceTests.swift */; };
+		040E8E71237E7376002F5B3F /* KMNameSpaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040E8E70237E7376002F5B3F /* KMNameSpaceUITests.swift */; };
+		0414B5072383C6AD00675496 /* UIView+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4E72383C6AD00675496 /* UIView+KMNameSpace.swift */; };
+		0414B5082383C6AD00675496 /* UIColor+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4E82383C6AD00675496 /* UIColor+KMNameSpace.swift */; };
+		0414B5092383C6AD00675496 /* UIViewController+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4E92383C6AD00675496 /* UIViewController+KMNameSpace.swift */; };
+		0414B50A2383C6AD00675496 /* UIImage+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4EA2383C6AD00675496 /* UIImage+KMNameSpace.swift */; };
+		0414B50B2383C6AD00675496 /* UIApplication+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4EB2383C6AD00675496 /* UIApplication+KMNameSpace.swift */; };
+		0414B50C2383C6AD00675496 /* UIImageView+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4EC2383C6AD00675496 /* UIImageView+KMNameSpace.swift */; };
+		0414B50D2383C6AD00675496 /* UIFont+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4ED2383C6AD00675496 /* UIFont+KMNameSpace.swift */; };
+		0414B50E2383C6AD00675496 /* UISwitch+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4EE2383C6AD00675496 /* UISwitch+KMNameSpace.swift */; };
+		0414B50F2383C6AD00675496 /* UIView+reusable+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4EF2383C6AD00675496 /* UIView+reusable+KMNameSpace.swift */; };
+		0414B5102383C6AD00675496 /* UILabel+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4F02383C6AD00675496 /* UILabel+KMNameSpace.swift */; };
+		0414B5112383C6AD00675496 /* UIScrollView+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4F12383C6AD00675496 /* UIScrollView+KMNameSpace.swift */; };
+		0414B5122383C6AD00675496 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4F22383C6AD00675496 /* File.swift */; };
+		0414B5132383C6AD00675496 /* UITableView+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4F32383C6AD00675496 /* UITableView+KMNameSpace.swift */; };
+		0414B5142383C6AD00675496 /* UIDevice+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4F42383C6AD00675496 /* UIDevice+KMNameSpace.swift */; };
+		0414B5152383C6AD00675496 /* UIButton+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4F52383C6AD00675496 /* UIButton+KMNameSpace.swift */; };
+		0414B5162383C6AD00675496 /* UICollectionView+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4F62383C6AD00675496 /* UICollectionView+KMNameSpace.swift */; };
+		0414B5172383C6AD00675496 /* KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4F72383C6AD00675496 /* KMNameSpace.swift */; };
+		0414B5182383C6AD00675496 /* CGImage+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4F92383C6AD00675496 /* CGImage+KMNameSpace.swift */; };
+		0414B5192383C6AD00675496 /* Number+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4FA2383C6AD00675496 /* Number+KMNameSpace.swift */; };
+		0414B51A2383C6AD00675496 /* Array+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4FB2383C6AD00675496 /* Array+KMNameSpace.swift */; };
+		0414B51B2383C6AD00675496 /* CGColor+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4FC2383C6AD00675496 /* CGColor+KMNameSpace.swift */; };
+		0414B51C2383C6AD00675496 /* Date+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4FD2383C6AD00675496 /* Date+KMNameSpace.swift */; };
+		0414B51D2383C6AD00675496 /* Data+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4FE2383C6AD00675496 /* Data+KMNameSpace.swift */; };
+		0414B51E2383C6AD00675496 /* String+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4FF2383C6AD00675496 /* String+KMNameSpace.swift */; };
+		0414B51F2383C6AD00675496 /* Notification+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B5002383C6AD00675496 /* Notification+KMNameSpace.swift */; };
+		0414B5202383C6AD00675496 /* KMUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B5022383C6AD00675496 /* KMUtilities.swift */; };
+		0414B5212383C6AD00675496 /* NAttributedString+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B5042383C6AD00675496 /* NAttributedString+KMNameSpace.swift */; };
+		0414B5222383C6AD00675496 /* CALayer+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B5062383C6AD00675496 /* CALayer+KMNameSpace.swift */; };
+		682CF01E5E471283E52B6826 /* Pods_KMNameSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A20A875B6F54BA036C88338 /* Pods_KMNameSpace.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		040E8E62237E7376002F5B3F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 040E8E43237E7372002F5B3F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 040E8E4A237E7372002F5B3F;
+			remoteInfo = KMNameSpace;
+		};
+		040E8E6D237E7376002F5B3F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 040E8E43237E7372002F5B3F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 040E8E4A237E7372002F5B3F;
+			remoteInfo = KMNameSpace;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		040E8E4B237E7372002F5B3F /* KMNameSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KMNameSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		040E8E4E237E7372002F5B3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		040E8E52237E7372002F5B3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		040E8E55237E7372002F5B3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		040E8E57237E7375002F5B3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		040E8E5A237E7375002F5B3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		040E8E5C237E7375002F5B3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		040E8E61237E7376002F5B3F /* KMNameSpaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KMNameSpaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		040E8E65237E7376002F5B3F /* KMNameSpaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMNameSpaceTests.swift; sourceTree = "<group>"; };
+		040E8E67237E7376002F5B3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		040E8E6C237E7376002F5B3F /* KMNameSpaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KMNameSpaceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		040E8E70237E7376002F5B3F /* KMNameSpaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMNameSpaceUITests.swift; sourceTree = "<group>"; };
+		040E8E72237E7376002F5B3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0414B4E72383C6AD00675496 /* UIView+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+KMNameSpace.swift"; sourceTree = "<group>"; };
+		0414B4E82383C6AD00675496 /* UIColor+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+KMNameSpace.swift"; sourceTree = "<group>"; };
+		0414B4E92383C6AD00675496 /* UIViewController+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+KMNameSpace.swift"; sourceTree = "<group>"; };
+		0414B4EA2383C6AD00675496 /* UIImage+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+KMNameSpace.swift"; sourceTree = "<group>"; };
+		0414B4EB2383C6AD00675496 /* UIApplication+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+KMNameSpace.swift"; sourceTree = "<group>"; };
+		0414B4EC2383C6AD00675496 /* UIImageView+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+KMNameSpace.swift"; sourceTree = "<group>"; };
+		0414B4ED2383C6AD00675496 /* UIFont+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+KMNameSpace.swift"; sourceTree = "<group>"; };
+		0414B4EE2383C6AD00675496 /* UISwitch+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISwitch+KMNameSpace.swift"; sourceTree = "<group>"; };
+		0414B4EF2383C6AD00675496 /* UIView+reusable+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+reusable+KMNameSpace.swift"; sourceTree = "<group>"; };
+		0414B4F02383C6AD00675496 /* UILabel+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+KMNameSpace.swift"; sourceTree = "<group>"; };
+		0414B4F12383C6AD00675496 /* UIScrollView+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+KMNameSpace.swift"; sourceTree = "<group>"; };
+		0414B4F22383C6AD00675496 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		0414B4F32383C6AD00675496 /* UITableView+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+KMNameSpace.swift"; sourceTree = "<group>"; };
+		0414B4F42383C6AD00675496 /* UIDevice+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+KMNameSpace.swift"; sourceTree = "<group>"; };
+		0414B4F52383C6AD00675496 /* UIButton+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+KMNameSpace.swift"; sourceTree = "<group>"; };
+		0414B4F62383C6AD00675496 /* UICollectionView+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+KMNameSpace.swift"; sourceTree = "<group>"; };
+		0414B4F72383C6AD00675496 /* KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMNameSpace.swift; sourceTree = "<group>"; };
+		0414B4F92383C6AD00675496 /* CGImage+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImage+KMNameSpace.swift"; sourceTree = "<group>"; };
+		0414B4FA2383C6AD00675496 /* Number+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Number+KMNameSpace.swift"; sourceTree = "<group>"; };
+		0414B4FB2383C6AD00675496 /* Array+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+KMNameSpace.swift"; sourceTree = "<group>"; };
+		0414B4FC2383C6AD00675496 /* CGColor+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGColor+KMNameSpace.swift"; sourceTree = "<group>"; };
+		0414B4FD2383C6AD00675496 /* Date+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+KMNameSpace.swift"; sourceTree = "<group>"; };
+		0414B4FE2383C6AD00675496 /* Data+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+KMNameSpace.swift"; sourceTree = "<group>"; };
+		0414B4FF2383C6AD00675496 /* String+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+KMNameSpace.swift"; sourceTree = "<group>"; };
+		0414B5002383C6AD00675496 /* Notification+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Notification+KMNameSpace.swift"; sourceTree = "<group>"; };
+		0414B5022383C6AD00675496 /* KMUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMUtilities.swift; sourceTree = "<group>"; };
+		0414B5042383C6AD00675496 /* NAttributedString+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NAttributedString+KMNameSpace.swift"; sourceTree = "<group>"; };
+		0414B5062383C6AD00675496 /* CALayer+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+KMNameSpace.swift"; sourceTree = "<group>"; };
+		0D177EB0D12F37B778E16EF6 /* Pods-KMNameSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMNameSpace.debug.xcconfig"; path = "Target Support Files/Pods-KMNameSpace/Pods-KMNameSpace.debug.xcconfig"; sourceTree = "<group>"; };
+		5A20A875B6F54BA036C88338 /* Pods_KMNameSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KMNameSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79F9A2C9759E025E34812AAF /* Pods-KMNameSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMNameSpace.release.xcconfig"; path = "Target Support Files/Pods-KMNameSpace/Pods-KMNameSpace.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		040E8E48237E7372002F5B3F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				682CF01E5E471283E52B6826 /* Pods_KMNameSpace.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		040E8E5E237E7376002F5B3F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		040E8E69237E7376002F5B3F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		040E8E42237E7372002F5B3F = {
+			isa = PBXGroup;
+			children = (
+				040E8E4D237E7372002F5B3F /* KMNameSpace */,
+				040E8E64237E7376002F5B3F /* KMNameSpaceTests */,
+				040E8E6F237E7376002F5B3F /* KMNameSpaceUITests */,
+				040E8E4C237E7372002F5B3F /* Products */,
+				2A241340EF9DD9CC89A7EF9A /* Pods */,
+				4A489B78568DCE8762B1E52A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		040E8E4C237E7372002F5B3F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				040E8E4B237E7372002F5B3F /* KMNameSpace.app */,
+				040E8E61237E7376002F5B3F /* KMNameSpaceTests.xctest */,
+				040E8E6C237E7376002F5B3F /* KMNameSpaceUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		040E8E4D237E7372002F5B3F /* KMNameSpace */ = {
+			isa = PBXGroup;
+			children = (
+				0414B4E52383C6AD00675496 /* KMKit */,
+				040E8E4E237E7372002F5B3F /* AppDelegate.swift */,
+				040E8E52237E7372002F5B3F /* ViewController.swift */,
+				040E8E54237E7372002F5B3F /* Main.storyboard */,
+				040E8E57237E7375002F5B3F /* Assets.xcassets */,
+				040E8E59237E7375002F5B3F /* LaunchScreen.storyboard */,
+				040E8E5C237E7375002F5B3F /* Info.plist */,
+			);
+			path = KMNameSpace;
+			sourceTree = "<group>";
+		};
+		040E8E64237E7376002F5B3F /* KMNameSpaceTests */ = {
+			isa = PBXGroup;
+			children = (
+				040E8E65237E7376002F5B3F /* KMNameSpaceTests.swift */,
+				040E8E67237E7376002F5B3F /* Info.plist */,
+			);
+			path = KMNameSpaceTests;
+			sourceTree = "<group>";
+		};
+		040E8E6F237E7376002F5B3F /* KMNameSpaceUITests */ = {
+			isa = PBXGroup;
+			children = (
+				040E8E70237E7376002F5B3F /* KMNameSpaceUITests.swift */,
+				040E8E72237E7376002F5B3F /* Info.plist */,
+			);
+			path = KMNameSpaceUITests;
+			sourceTree = "<group>";
+		};
+		0414B4E52383C6AD00675496 /* KMKit */ = {
+			isa = PBXGroup;
+			children = (
+				0414B4F72383C6AD00675496 /* KMNameSpace.swift */,
+				0414B4E62383C6AD00675496 /* UIKit */,
+				0414B4F82383C6AD00675496 /* Foundation */,
+				0414B5012383C6AD00675496 /* Utilities */,
+				0414B5032383C6AD00675496 /* Text */,
+				0414B5052383C6AD00675496 /* CoreAnimation */,
+			);
+			path = KMKit;
+			sourceTree = "<group>";
+		};
+		0414B4E62383C6AD00675496 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				0414B4E72383C6AD00675496 /* UIView+KMNameSpace.swift */,
+				0414B4E82383C6AD00675496 /* UIColor+KMNameSpace.swift */,
+				0414B4E92383C6AD00675496 /* UIViewController+KMNameSpace.swift */,
+				0414B4EA2383C6AD00675496 /* UIImage+KMNameSpace.swift */,
+				0414B4EB2383C6AD00675496 /* UIApplication+KMNameSpace.swift */,
+				0414B4EC2383C6AD00675496 /* UIImageView+KMNameSpace.swift */,
+				0414B4ED2383C6AD00675496 /* UIFont+KMNameSpace.swift */,
+				0414B4EE2383C6AD00675496 /* UISwitch+KMNameSpace.swift */,
+				0414B4EF2383C6AD00675496 /* UIView+reusable+KMNameSpace.swift */,
+				0414B4F02383C6AD00675496 /* UILabel+KMNameSpace.swift */,
+				0414B4F12383C6AD00675496 /* UIScrollView+KMNameSpace.swift */,
+				0414B4F22383C6AD00675496 /* File.swift */,
+				0414B4F32383C6AD00675496 /* UITableView+KMNameSpace.swift */,
+				0414B4F42383C6AD00675496 /* UIDevice+KMNameSpace.swift */,
+				0414B4F52383C6AD00675496 /* UIButton+KMNameSpace.swift */,
+				0414B4F62383C6AD00675496 /* UICollectionView+KMNameSpace.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		0414B4F82383C6AD00675496 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				0414B4F92383C6AD00675496 /* CGImage+KMNameSpace.swift */,
+				0414B4FA2383C6AD00675496 /* Number+KMNameSpace.swift */,
+				0414B4FB2383C6AD00675496 /* Array+KMNameSpace.swift */,
+				0414B4FC2383C6AD00675496 /* CGColor+KMNameSpace.swift */,
+				0414B4FD2383C6AD00675496 /* Date+KMNameSpace.swift */,
+				0414B4FE2383C6AD00675496 /* Data+KMNameSpace.swift */,
+				0414B4FF2383C6AD00675496 /* String+KMNameSpace.swift */,
+				0414B5002383C6AD00675496 /* Notification+KMNameSpace.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		0414B5012383C6AD00675496 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0414B5022383C6AD00675496 /* KMUtilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		0414B5032383C6AD00675496 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				0414B5042383C6AD00675496 /* NAttributedString+KMNameSpace.swift */,
+			);
+			path = Text;
+			sourceTree = "<group>";
+		};
+		0414B5052383C6AD00675496 /* CoreAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				0414B5062383C6AD00675496 /* CALayer+KMNameSpace.swift */,
+			);
+			path = CoreAnimation;
+			sourceTree = "<group>";
+		};
+		2A241340EF9DD9CC89A7EF9A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0D177EB0D12F37B778E16EF6 /* Pods-KMNameSpace.debug.xcconfig */,
+				79F9A2C9759E025E34812AAF /* Pods-KMNameSpace.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4A489B78568DCE8762B1E52A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A20A875B6F54BA036C88338 /* Pods_KMNameSpace.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		040E8E4A237E7372002F5B3F /* KMNameSpace */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 040E8E75237E7376002F5B3F /* Build configuration list for PBXNativeTarget "KMNameSpace" */;
+			buildPhases = (
+				46E140224C95944B6D1A22A2 /* [CP] Check Pods Manifest.lock */,
+				040E8E47237E7372002F5B3F /* Sources */,
+				040E8E48237E7372002F5B3F /* Frameworks */,
+				040E8E49237E7372002F5B3F /* Resources */,
+				2A89EFB23F83CA83121F7322 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KMNameSpace;
+			productName = KMNameSpace;
+			productReference = 040E8E4B237E7372002F5B3F /* KMNameSpace.app */;
+			productType = "com.apple.product-type.application";
+		};
+		040E8E60237E7376002F5B3F /* KMNameSpaceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 040E8E78237E7376002F5B3F /* Build configuration list for PBXNativeTarget "KMNameSpaceTests" */;
+			buildPhases = (
+				040E8E5D237E7376002F5B3F /* Sources */,
+				040E8E5E237E7376002F5B3F /* Frameworks */,
+				040E8E5F237E7376002F5B3F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				040E8E63237E7376002F5B3F /* PBXTargetDependency */,
+			);
+			name = KMNameSpaceTests;
+			productName = KMNameSpaceTests;
+			productReference = 040E8E61237E7376002F5B3F /* KMNameSpaceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		040E8E6B237E7376002F5B3F /* KMNameSpaceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 040E8E7B237E7376002F5B3F /* Build configuration list for PBXNativeTarget "KMNameSpaceUITests" */;
+			buildPhases = (
+				040E8E68237E7376002F5B3F /* Sources */,
+				040E8E69237E7376002F5B3F /* Frameworks */,
+				040E8E6A237E7376002F5B3F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				040E8E6E237E7376002F5B3F /* PBXTargetDependency */,
+			);
+			name = KMNameSpaceUITests;
+			productName = KMNameSpaceUITests;
+			productReference = 040E8E6C237E7376002F5B3F /* KMNameSpaceUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		040E8E43237E7372002F5B3F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = KM;
+				TargetAttributes = {
+					040E8E4A237E7372002F5B3F = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					040E8E60237E7376002F5B3F = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 040E8E4A237E7372002F5B3F;
+					};
+					040E8E6B237E7376002F5B3F = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 040E8E4A237E7372002F5B3F;
+					};
+				};
+			};
+			buildConfigurationList = 040E8E46237E7372002F5B3F /* Build configuration list for PBXProject "KMNameSpace" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 040E8E42237E7372002F5B3F;
+			productRefGroup = 040E8E4C237E7372002F5B3F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				040E8E4A237E7372002F5B3F /* KMNameSpace */,
+				040E8E60237E7376002F5B3F /* KMNameSpaceTests */,
+				040E8E6B237E7376002F5B3F /* KMNameSpaceUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		040E8E49237E7372002F5B3F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				040E8E5B237E7375002F5B3F /* LaunchScreen.storyboard in Resources */,
+				040E8E58237E7375002F5B3F /* Assets.xcassets in Resources */,
+				040E8E56237E7372002F5B3F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		040E8E5F237E7376002F5B3F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		040E8E6A237E7376002F5B3F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A89EFB23F83CA83121F7322 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KMNameSpace/Pods-KMNameSpace-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KMNameSpace/Pods-KMNameSpace-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KMNameSpace/Pods-KMNameSpace-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46E140224C95944B6D1A22A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KMNameSpace-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		040E8E47237E7372002F5B3F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0414B5162383C6AD00675496 /* UICollectionView+KMNameSpace.swift in Sources */,
+				0414B5152383C6AD00675496 /* UIButton+KMNameSpace.swift in Sources */,
+				0414B51E2383C6AD00675496 /* String+KMNameSpace.swift in Sources */,
+				0414B5072383C6AD00675496 /* UIView+KMNameSpace.swift in Sources */,
+				0414B5202383C6AD00675496 /* KMUtilities.swift in Sources */,
+				0414B50F2383C6AD00675496 /* UIView+reusable+KMNameSpace.swift in Sources */,
+				0414B5102383C6AD00675496 /* UILabel+KMNameSpace.swift in Sources */,
+				0414B5142383C6AD00675496 /* UIDevice+KMNameSpace.swift in Sources */,
+				0414B51D2383C6AD00675496 /* Data+KMNameSpace.swift in Sources */,
+				0414B5132383C6AD00675496 /* UITableView+KMNameSpace.swift in Sources */,
+				0414B50E2383C6AD00675496 /* UISwitch+KMNameSpace.swift in Sources */,
+				0414B5112383C6AD00675496 /* UIScrollView+KMNameSpace.swift in Sources */,
+				0414B5182383C6AD00675496 /* CGImage+KMNameSpace.swift in Sources */,
+				0414B50A2383C6AD00675496 /* UIImage+KMNameSpace.swift in Sources */,
+				0414B51A2383C6AD00675496 /* Array+KMNameSpace.swift in Sources */,
+				0414B50B2383C6AD00675496 /* UIApplication+KMNameSpace.swift in Sources */,
+				0414B5082383C6AD00675496 /* UIColor+KMNameSpace.swift in Sources */,
+				0414B50D2383C6AD00675496 /* UIFont+KMNameSpace.swift in Sources */,
+				0414B5122383C6AD00675496 /* File.swift in Sources */,
+				0414B50C2383C6AD00675496 /* UIImageView+KMNameSpace.swift in Sources */,
+				0414B51F2383C6AD00675496 /* Notification+KMNameSpace.swift in Sources */,
+				0414B5172383C6AD00675496 /* KMNameSpace.swift in Sources */,
+				0414B5192383C6AD00675496 /* Number+KMNameSpace.swift in Sources */,
+				040E8E53237E7372002F5B3F /* ViewController.swift in Sources */,
+				0414B5092383C6AD00675496 /* UIViewController+KMNameSpace.swift in Sources */,
+				0414B51B2383C6AD00675496 /* CGColor+KMNameSpace.swift in Sources */,
+				0414B5212383C6AD00675496 /* NAttributedString+KMNameSpace.swift in Sources */,
+				0414B5222383C6AD00675496 /* CALayer+KMNameSpace.swift in Sources */,
+				040E8E4F237E7372002F5B3F /* AppDelegate.swift in Sources */,
+				0414B51C2383C6AD00675496 /* Date+KMNameSpace.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		040E8E5D237E7376002F5B3F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				040E8E66237E7376002F5B3F /* KMNameSpaceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		040E8E68237E7376002F5B3F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				040E8E71237E7376002F5B3F /* KMNameSpaceUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		040E8E63237E7376002F5B3F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 040E8E4A237E7372002F5B3F /* KMNameSpace */;
+			targetProxy = 040E8E62237E7376002F5B3F /* PBXContainerItemProxy */;
+		};
+		040E8E6E237E7376002F5B3F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 040E8E4A237E7372002F5B3F /* KMNameSpace */;
+			targetProxy = 040E8E6D237E7376002F5B3F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		040E8E54237E7372002F5B3F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				040E8E55237E7372002F5B3F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		040E8E59237E7375002F5B3F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				040E8E5A237E7375002F5B3F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		040E8E73237E7376002F5B3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		040E8E74237E7376002F5B3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		040E8E76237E7376002F5B3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D177EB0D12F37B778E16EF6 /* Pods-KMNameSpace.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V5JNRC9UDK;
+				INFOPLIST_FILE = KMNameSpace/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kmh.KMNameSpace;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		040E8E77237E7376002F5B3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79F9A2C9759E025E34812AAF /* Pods-KMNameSpace.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V5JNRC9UDK;
+				INFOPLIST_FILE = KMNameSpace/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kmh.KMNameSpace;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		040E8E79237E7376002F5B3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V5JNRC9UDK;
+				INFOPLIST_FILE = KMNameSpaceTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kmh.KMNameSpaceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KMNameSpace.app/KMNameSpace";
+			};
+			name = Debug;
+		};
+		040E8E7A237E7376002F5B3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V5JNRC9UDK;
+				INFOPLIST_FILE = KMNameSpaceTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kmh.KMNameSpaceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KMNameSpace.app/KMNameSpace";
+			};
+			name = Release;
+		};
+		040E8E7C237E7376002F5B3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V5JNRC9UDK;
+				INFOPLIST_FILE = KMNameSpaceUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kmh.KMNameSpaceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KMNameSpace;
+			};
+			name = Debug;
+		};
+		040E8E7D237E7376002F5B3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V5JNRC9UDK;
+				INFOPLIST_FILE = KMNameSpaceUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kmh.KMNameSpaceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KMNameSpace;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		040E8E46237E7372002F5B3F /* Build configuration list for PBXProject "KMNameSpace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				040E8E73237E7376002F5B3F /* Debug */,
+				040E8E74237E7376002F5B3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		040E8E75237E7376002F5B3F /* Build configuration list for PBXNativeTarget "KMNameSpace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				040E8E76237E7376002F5B3F /* Debug */,
+				040E8E77237E7376002F5B3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		040E8E78237E7376002F5B3F /* Build configuration list for PBXNativeTarget "KMNameSpaceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				040E8E79237E7376002F5B3F /* Debug */,
+				040E8E7A237E7376002F5B3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		040E8E7B237E7376002F5B3F /* Build configuration list for PBXNativeTarget "KMNameSpaceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				040E8E7C237E7376002F5B3F /* Debug */,
+				040E8E7D237E7376002F5B3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 040E8E43237E7372002F5B3F /* Project object */;
+}

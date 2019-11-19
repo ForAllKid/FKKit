@@ -1,0 +1,14 @@
+platform :ios, '8.0'
+
+inhibit_all_warnings!
+
+target 'KMNameSpace' do 
+
+	use_frameworks!
+
+	pod 'SnapKit'
+ 	pod 'Kingfisher'
+ 	pod 'KingfisherWebP'
+  pod 'EFFoundation'
+ 	
+end
