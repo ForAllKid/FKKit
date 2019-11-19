@@ -18,7 +18,6 @@
 		0414B5082383C6AD00675496 /* UIColor+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4E82383C6AD00675496 /* UIColor+KMNameSpace.swift */; };
 		0414B5092383C6AD00675496 /* UIViewController+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4E92383C6AD00675496 /* UIViewController+KMNameSpace.swift */; };
 		0414B50A2383C6AD00675496 /* UIImage+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4EA2383C6AD00675496 /* UIImage+KMNameSpace.swift */; };
-		0414B50B2383C6AD00675496 /* UIApplication+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4EB2383C6AD00675496 /* UIApplication+KMNameSpace.swift */; };
 		0414B50C2383C6AD00675496 /* UIImageView+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4EC2383C6AD00675496 /* UIImageView+KMNameSpace.swift */; };
 		0414B50D2383C6AD00675496 /* UIFont+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4ED2383C6AD00675496 /* UIFont+KMNameSpace.swift */; };
 		0414B50E2383C6AD00675496 /* UISwitch+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4EE2383C6AD00675496 /* UISwitch+KMNameSpace.swift */; };
@@ -38,7 +37,6 @@
 		0414B51C2383C6AD00675496 /* Date+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4FD2383C6AD00675496 /* Date+KMNameSpace.swift */; };
 		0414B51D2383C6AD00675496 /* Data+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4FE2383C6AD00675496 /* Data+KMNameSpace.swift */; };
 		0414B51E2383C6AD00675496 /* String+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4FF2383C6AD00675496 /* String+KMNameSpace.swift */; };
-		0414B51F2383C6AD00675496 /* Notification+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B5002383C6AD00675496 /* Notification+KMNameSpace.swift */; };
 		0414B5202383C6AD00675496 /* KMUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B5022383C6AD00675496 /* KMUtilities.swift */; };
 		0414B5212383C6AD00675496 /* NAttributedString+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B5042383C6AD00675496 /* NAttributedString+KMNameSpace.swift */; };
 		0414B5222383C6AD00675496 /* CALayer+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B5062383C6AD00675496 /* CALayer+KMNameSpace.swift */; };
@@ -80,7 +78,6 @@
 		0414B4E82383C6AD00675496 /* UIColor+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+KMNameSpace.swift"; sourceTree = "<group>"; };
 		0414B4E92383C6AD00675496 /* UIViewController+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+KMNameSpace.swift"; sourceTree = "<group>"; };
 		0414B4EA2383C6AD00675496 /* UIImage+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+KMNameSpace.swift"; sourceTree = "<group>"; };
-		0414B4EB2383C6AD00675496 /* UIApplication+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+KMNameSpace.swift"; sourceTree = "<group>"; };
 		0414B4EC2383C6AD00675496 /* UIImageView+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+KMNameSpace.swift"; sourceTree = "<group>"; };
 		0414B4ED2383C6AD00675496 /* UIFont+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+KMNameSpace.swift"; sourceTree = "<group>"; };
 		0414B4EE2383C6AD00675496 /* UISwitch+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISwitch+KMNameSpace.swift"; sourceTree = "<group>"; };
@@ -100,7 +97,6 @@
 		0414B4FD2383C6AD00675496 /* Date+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+KMNameSpace.swift"; sourceTree = "<group>"; };
 		0414B4FE2383C6AD00675496 /* Data+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+KMNameSpace.swift"; sourceTree = "<group>"; };
 		0414B4FF2383C6AD00675496 /* String+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+KMNameSpace.swift"; sourceTree = "<group>"; };
-		0414B5002383C6AD00675496 /* Notification+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Notification+KMNameSpace.swift"; sourceTree = "<group>"; };
 		0414B5022383C6AD00675496 /* KMUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMUtilities.swift; sourceTree = "<group>"; };
 		0414B5042383C6AD00675496 /* NAttributedString+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NAttributedString+KMNameSpace.swift"; sourceTree = "<group>"; };
 		0414B5062383C6AD00675496 /* CALayer+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+KMNameSpace.swift"; sourceTree = "<group>"; };
@@ -202,10 +198,8 @@
 				0414B4F72383C6AD00675496 /* KMNameSpace.swift */,
 				0414B5022383C6AD00675496 /* KMUtilities.swift */,
 				0414B5042383C6AD00675496 /* NAttributedString+KMNameSpace.swift */,
-				0414B5002383C6AD00675496 /* Notification+KMNameSpace.swift */,
 				0414B4FA2383C6AD00675496 /* Number+KMNameSpace.swift */,
 				0414B4FF2383C6AD00675496 /* String+KMNameSpace.swift */,
-				0414B4EB2383C6AD00675496 /* UIApplication+KMNameSpace.swift */,
 				0414B4F52383C6AD00675496 /* UIButton+KMNameSpace.swift */,
 				0414B4F62383C6AD00675496 /* UICollectionView+KMNameSpace.swift */,
 				0414B4E82383C6AD00675496 /* UIColor+KMNameSpace.swift */,
@@ -431,12 +425,10 @@
 				0414B5182383C6AD00675496 /* CGImage+KMNameSpace.swift in Sources */,
 				0414B50A2383C6AD00675496 /* UIImage+KMNameSpace.swift in Sources */,
 				0414B51A2383C6AD00675496 /* Array+KMNameSpace.swift in Sources */,
-				0414B50B2383C6AD00675496 /* UIApplication+KMNameSpace.swift in Sources */,
 				0414B5082383C6AD00675496 /* UIColor+KMNameSpace.swift in Sources */,
 				0414B50D2383C6AD00675496 /* UIFont+KMNameSpace.swift in Sources */,
 				0414B5122383C6AD00675496 /* File.swift in Sources */,
 				0414B50C2383C6AD00675496 /* UIImageView+KMNameSpace.swift in Sources */,
-				0414B51F2383C6AD00675496 /* Notification+KMNameSpace.swift in Sources */,
 				0414B5172383C6AD00675496 /* KMNameSpace.swift in Sources */,
 				0414B5192383C6AD00675496 /* Number+KMNameSpace.swift in Sources */,
 				040E8E53237E7372002F5B3F /* ViewController.swift in Sources */,
