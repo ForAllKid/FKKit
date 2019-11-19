@@ -8,57 +8,11 @@
 
 import UIKit
 
+
 extension UIDevice: KMKitNamespaceWrappable {}
 
 
 public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == UIDevice {
-    
-    /// 获取已下载漫画章节占用的硬盘空间大小（Bytes）
-    /// - Parameter path: 路径，如果文件不存在或者路径不合法，返回0
-    func getChapterDownloadFileSize(path: String) -> Int64 {
-        
-        if !path.isEmpty {
-            return self.folderSizeAtPath(folderPath: path)
-        }
-        return CLongLong(0.0)
-    }
-    
-    //单个文件的大小
-    func fileSizeAtPath(filePath: String) -> CLongLong {
-        
-        let manager: FileManager = FileManager.default
-        if manager.fileExists(atPath: filePath){
-            do {
-                let dic :[FileAttributeKey : Any] = try manager.attributesOfItem(atPath: filePath)
-                return dic[FileAttributeKey.size] as! CLongLong
-            } catch {}
-        }
-        return 0
-    }
-    
-    //遍历文件夹获得文件夹大小，返回多少M
-    func folderSizeAtPath(folderPath: String) -> CLongLong {
-        let manager: FileManager = FileManager.default
-        if !manager.fileExists(atPath: folderPath) {
-            return 0
-        }
-        let paths: NSArray = manager.subpaths(atPath: folderPath)! as NSArray
-        let childFilesEnumerator: NSEnumerator = paths.objectEnumerator()
-        var fileName: String? = childFilesEnumerator.nextObject() as? String
-        var folderSize: CLongLong = 0;
-        if fileName != nil {
-            while fileName!.count > 0 {
-
-                let fileAbsolutePath: String = folderPath //.appendingPathComponent(fileName!)
-                folderSize += self.fileSizeAtPath(filePath: fileAbsolutePath);
-                fileName = (childFilesEnumerator.nextObject() as? String)
-                if fileName == nil {
-                    break
-                }
-            }
-        }
-        return folderSize/Int64((1024.0*1024.0));
-    }
     
     
     func blank<T>(of type: T.Type) -> T {
@@ -70,7 +24,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == UIDevi
     
     
     /// 磁盘总大小
-    var TotalDiskSize:Int64{
+    var totalDiskSize: Int64 {
         var fs = blank(of: statfs.self)
         if statfs("/var",&fs) >= 0{
             return Int64(UInt64(fs.f_bsize) * fs.f_blocks)
@@ -79,7 +33,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == UIDevi
     }
     
     /// 磁盘可用大小
-    var AvailableDiskSize:Int64{
+    var availableDiskSize: Int64 {
         var fs = blank(of: statfs.self)
         if statfs("/var",&fs) >= 0{
             return Int64(UInt64(fs.f_bsize) * fs.f_bavail)
@@ -110,35 +64,29 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == UIDevi
         }
     }
     
-    //    用法
-    //    print(UIDevice.current.fileSizeToString(fileSize: UIDevice.current.AvailableDiskSize))
-    //    print(UIDevice.current.fileSizeToString(fileSize: UIDevice.current.TotalDiskSize))
-    //
-    //    print(UIDevice.current.AvailableDiskSize)
-    //    print(UIDevice.current.TotalDiskSize)
+
 }
 
 
 
 
+//MARK: - Device Information
+
 public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIDevice {
-
     
-    
-    //MARK: - Device Information
-
-    
+    /// 系统版本
     static var systemVersion: Double {
         let version = Double(UIDevice.current.systemVersion) ?? 0.0
         return version
     }
     
-
+    
+    /// 判断是否是iPad
     var isPad: Bool {
         UI_USER_INTERFACE_IDIOM() == .pad
     }
-    
-    /// Whether the device is a simulator.
+        
+    /// 判断是否是模拟器
     var isSimulator: Bool {
         #if targetEnvironment(simulator)
         return true
@@ -146,14 +94,8 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIDevice
         return false
         #endif
     }
-    
-    
-
-    var isJailbroken: Bool {
-        false
-    }
-    
-    /// Wherher the device can make phone calls.
+        
+    /// 判断是否可以拨打电话
     var canMakePhoneCalls: Bool {
         guard let url = URL(string: "tel://") else {
             return false

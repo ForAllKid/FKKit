@@ -10,6 +10,16 @@ import UIKit
 import Kingfisher
 import EFFoundation
 
+
+class tc: UITableViewCell {
+    
+    
+}
+
+class cc: UICollectionViewCell {
+    
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -17,6 +27,8 @@ class ViewController: UIViewController {
         
         view.km.borderColor = .white
         
+        
+        print(tc.KM.reuseIdentifier, cc.KM.reuseIdentifier)
         
         
 //        view.ef.parentViewController

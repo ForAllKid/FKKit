@@ -13,8 +13,6 @@ extension Date: KMKitNamespaceWrappable {}
 
 public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Date {
     
-    
-    
     static var _formatter = DateFormatter()
     
     func string(withFormat format: String = "dd/MM/yyyy HH:mm") -> String {

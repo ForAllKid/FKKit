@@ -14,11 +14,24 @@ extension CALayer: KMKitNamespaceWrappable {}
 
 public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: CALayer {
     
+    /// 获取截图
     var snapshotImage: UIImage? {
-        UIGraphicsBeginImageContextWithOptions(kmWrappedValue.bounds.size, kmWrappedValue.isOpaque, 0)
-        defer { UIGraphicsEndImageContext() }
-        guard let ctx = UIGraphicsGetCurrentContext() else { return nil }
-        kmWrappedValue.render(in: ctx)
+        
+        UIGraphicsBeginImageContextWithOptions(
+            kmWrappedValue.bounds.size,
+            kmWrappedValue.isOpaque,
+            0
+        )
+        defer {
+            UIGraphicsEndImageContext()
+        }
+        
+        guard let ctx = UIGraphicsGetCurrentContext() else {
+            return nil
+        }
+        kmWrappedValue.render(
+            in: ctx
+        )
         let image = UIGraphicsGetImageFromCurrentImageContext()
         return image
     }
@@ -29,6 +42,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: CALayer 
     }
     
     
+    /// 映射UIView中对应的mode
     var contentMode: UIView.ContentMode {
         get {
             CALayer.CAGravityToUIViewContentMode(gravity: kmWrappedValue.contentsGravity)
@@ -41,21 +55,41 @@ private extension CALayer {
     
     static func CAGravityToUIViewContentMode(gravity: CALayerContentsGravity) -> UIView.ContentMode {
 
-        let dict: [CALayerContentsGravity: UIView.ContentMode] = [
-            .center:           .center,
-            .top:              .top,
-            .bottom:           .bottom,
-            .left:             .left,
-            .right:            .right,
-            .topLeft:          .topLeft,
-            .topRight:         .topRight,
-            .bottomLeft:       .bottomLeft,
-            .bottomRight:      .bottomRight,
-            .resize:           .scaleToFill,
-            .resizeAspect:     .scaleAspectFit,
-            .resizeAspectFill: .scaleAspectFill
-        ]
-        return dict[gravity] ?? .scaleToFill
+        switch gravity {
+            
+            case .top:
+                return .top
+            case .left:
+                return .left
+            case .bottom:
+                return .bottom
+            case .right:
+                return .right
+            
+            case .topLeft:
+                return .topLeft
+            case .topRight:
+                return .topRight
+            case .bottomLeft:
+                return .bottomLeft
+            case .bottomRight:
+                return .bottomRight
+            
+            case .center:
+                return .center
+            
+            case .resize:
+                return .scaleToFill
+            
+            case .resizeAspect:
+                return .scaleAspectFit
+            
+            case .resizeAspectFill:
+                return .scaleAspectFill
+            
+            default:
+                return .scaleToFill
+        }
 
     }
     

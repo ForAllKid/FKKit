@@ -13,24 +13,29 @@ import Accelerate
 extension UIImage: KMKitNamespaceWrappable {}
 
 
+
+// MARK: - 创建图片
+
 public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage {
     
-    //MARK: - Create image
-
-
     
-    /// <#Description#>
-    /// - Parameter emoji: <#emoji description#>
-    /// - Parameter size: <#size description#>
+    /// 根据一个emoji表情创建一张指定大小的图片
+    /// - Parameter emoji: emoji表情，比如 😈
+    /// - Parameter size: 图片的宽度
     static func imageWithEmoji(_ emoji: String, size: CGFloat) -> UIImage? {
         
         guard emoji.count > 0, size > 1 else {
             return nil
         }
 
+        /// 获取屏幕的scale
         let scale = UIScreen.main.scale
         
-        let ctFont = CTFontCreateWithName("AppleColorEmoji" as CFString, size * scale, nil)
+        let ctFont = CTFontCreateWithName(
+            "AppleColorEmoji" as CFString,
+            size * scale,
+            nil
+        )
         
         let font = ctFont as UIFont
         
@@ -62,12 +67,15 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage 
             return nil
         }
         
-        let image = UIImage(cgImage: cgImage, scale: scale, orientation: .up)
+        let image = UIImage(
+            cgImage: cgImage,
+            scale: scale,
+            orientation: .up
+        )
         
-        return image;
+        return image
     }
 
-    
     /// 根据颜色创建一张图片，大小可以指定，默认为 1 x 1 pt的大小，不能为负数，不然返回为nil
     /// - Parameter color: 颜色
     /// - Parameter size: 大小
@@ -97,10 +105,14 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage 
     }
     
 
-
     
-    // MARK: - Image Info
+}
 
+
+// MARK: - 获取图片信息
+
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage {
+    
     
     /// 是否包含alpha通道
     var hasAlphaChannel: Bool {
@@ -116,37 +128,40 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage 
                 alpha == CGImageAlphaInfo.premultipliedFirst.rawValue ||
                 alpha == CGImageAlphaInfo.premultipliedLast.rawValue)
     }
+    
+    /// 图片占用的磁盘大小（byte）
+    var bytesSize: Int {
+        return kmWrappedValue.jpegData(compressionQuality: 1)?.count ?? 0
+    }
+    
+    /// 获取原图
+    var original: UIImage {
+        return kmWrappedValue.withRenderingMode(.alwaysOriginal)
+    }
+    
+    /// 咋翻译呢
+    var template: UIImage {
+        return kmWrappedValue.withRenderingMode(.alwaysTemplate)
+    }
+    
+}
+    
 
-    
-    
-    // MARK: - Modify Image
+// MARK: - 修改图片
 
-    
-    /**
-     Draws the entire image in the specified rectangle, content changed with
-     the contentMode.
-     
-     @discussion This method draws the entire image in the current graphics context,
-     respecting the image's orientation setting. In the default coordinate system,
-     images are situated down and to the right of the origin of the specified
-     rectangle. This method respects any transforms applied to the current graphics
-     context, however.
-     
-     @param rect        The rectangle in which to draw the image.
-     
-     @param contentMode Draw content mode
-     
-     @param clips       A Boolean value that determines whether content are confined to the rect.
-     */
-    
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage {
     
     /// 根据特定大小，指定的contentMode重新绘制图片
-    /// - Parameter rect: <#rect description#>
-    /// - Parameter contentMode: <#contentMode description#>
-    /// - Parameter clipsToBounds: <#clipsToBounds description#>
+    /// - Parameter rect: 绘制的区域
+    /// - Parameter contentMode: contentMode
+    /// - Parameter clipsToBounds: 图片超出部分是否裁剪
     func draw(in rect: CGRect, contentMode: UIView.ContentMode = .scaleToFill, clipsToBounds: Bool = false) {
         
-        let drawRect = KMKit.rectFitWithContentMode(rect: rect, size: kmWrappedValue.size, contentMode: contentMode)
+        let drawRect = KMKit.rectFitWithContentMode(
+            rect: rect,
+            size: kmWrappedValue.size,
+            contentMode: contentMode
+        )
         
         guard drawRect.size != .zero else {
             return
@@ -173,7 +188,9 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage 
         }
         
     }
-
+    
+    /// 根据指定的大小改变图片的宽高
+    /// - Parameter size: 大小
     func imageByResize(to size: CGSize) -> UIImage? {
         
         guard size.width > 0, size.height > 0 else {
@@ -186,7 +203,9 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage 
             UIGraphicsEndImageContext()
         }
 
-        kmWrappedValue.draw(in: .init(origin: .zero, size: size))
+        kmWrappedValue.draw(
+            in: .init(origin: .zero, size: size)
+        )
 
         let image = UIGraphicsGetImageFromCurrentImageContext()
         
@@ -194,32 +213,12 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage 
     }
 
     
-
-    func imageByResize(to size: CGSize, contentMode: UIView.ContentMode) {
-        
-//        guard size.width > 0, size.height > 0 else {
-//            return nil
-//        }
-//
-//        UIGraphicsBeginImageContextWithOptions(size, false, kmWrappedValue.scale)
-//
-//        defer {
-//            UIGraphicsEndImageContext()
-//        }
-//
-//        kmWrappedValue.dr
-//
-//
-//        [self drawInRect:CGRectMake(0, 0, size.width, size.height) withContentMode:contentMode clipsToBounds:NO];
-//        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-//        UIGraphicsEndImageContext();
-//        return image;
-        
-    }
-
+    /// 获取图片指定区域的内容（裁剪）
+    /// - Parameter rect: 指定区域
     func imageByCrop(to rect: CGRect) -> UIImage? {
-        var rect = rect
         
+        var rect = rect
+    
         rect.origin.x *= kmWrappedValue.scale
         rect.origin.y *= kmWrappedValue.scale
         rect.size.width *= kmWrappedValue.scale
@@ -233,24 +232,20 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage 
             return nil
         }
         
-        let image = UIImage(cgImage: ref, scale: kmWrappedValue.scale, orientation: kmWrappedValue.imageOrientation)
+        let image = UIImage(
+            cgImage: ref,
+            scale: kmWrappedValue.scale,
+            orientation: kmWrappedValue.imageOrientation
+        )
                 
         return image
         
     }
-    
 
-    /**
-     Returns a new image which is edge inset from this image.
-     
-     @param insets  Inset (positive) for each of the edges, values can be negative to 'outset'.
-     
-     @param color   Extend edge's fill color, nil means clear color.
-     
-     @return        The new image, or nil if an error occurs.
-     */
     
-    
+    /// 改变图片内间距
+    /// - Parameter insets: 内间距
+    /// - Parameter color: 填充颜色
     func imageByInsetsEdge(_ insets: UIEdgeInsets, color: UIColor?) -> UIImage? {
         
         var size = kmWrappedValue.size
@@ -303,12 +298,12 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage 
         
     }
     
-    /// <#Description#>
-    /// - Parameter radius: <#radius description#>
-    /// - Parameter corners: <#corners description#>
-    /// - Parameter borderWidth: <#borderWidth description#>
-    /// - Parameter borderColor: <#borderColor description#>
-    /// - Parameter borderLineJoin: <#borderLineJoin description#>
+    /// 为图片添加圆角、边框粗细和颜色、以及边框连接样式
+    /// - Parameter radius: 圆角值
+    /// - Parameter corners: 圆角位置
+    /// - Parameter borderWidth: 边框粗细值
+    /// - Parameter borderColor: 边框颜色
+    /// - Parameter borderLineJoin: 边框线条连接样式
     func imageByRoundCornerRadius(
         _ radius: CGFloat,
         corners: UIRectCorner = .allCorners,
@@ -394,8 +389,8 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage 
     
 
     /// 旋转。。。
-    /// - Parameter radians: <#radians description#>
-    /// - Parameter fitSize: <#fitSize description#>
+    /// - Parameter radians: 角度
+    /// - Parameter fitSize: 是否自适应大小
     func imageByRotate(_ radians: CGFloat, fitSize: Bool = false) -> UIImage? {
         
         guard let cgImage = kmWrappedValue.cgImage else {
@@ -455,25 +450,28 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage 
         return img
         
     }
-
+    
+    /// 向左旋转90°
     var imageByRotateLeft90: UIImage? {
         imageByRotate(90, fitSize: true)
     }
     
-
+    /// 向右旋转90°
     var imageByRotateRight90: UIImage? {
         imageByRotate(-90, fitSize: true)
     }
-
+    
+    /// 旋转180°
     var imageByRotate180: UIImage? {
         _km_flipHorizontal(true, vertical: true)
     }
-
+    
+    /// 垂直翻转
     var imageByFlipVertical: UIImage? {
         _km_flipHorizontal(false, vertical: true)
     }
     
-
+    /// 水平翻转
     var imageByFlipHorizontal: UIImage? {
         _km_flipHorizontal(true, vertical: false)
     }
@@ -481,6 +479,9 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage 
     
     
     
+    /// 内部方法
+    /// - Parameter horizontal: 是否水平翻转
+    /// - Parameter vertical: 是否垂直翻转
     private func _km_flipHorizontal(_ horizontal: Bool, vertical: Bool) -> UIImage? {
         
         guard let cgImage = kmWrappedValue.cgImage else {
@@ -545,13 +546,16 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage 
     }
     
     
-    
-    
-    // MARK: - Image Effect
+}
 
-    
+
+
+// MARK: - 图片着色以及blur样式（blur样式待完善）
+
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage {
+
     /// 重新着色
-    /// - Parameter color: <#color description#>
+    /// - Parameter color: 着色值
     func imageByTintColor(_ color: UIColor) -> UIImage? {
         
         UIGraphicsBeginImageContextWithOptions(kmWrappedValue.size, false, kmWrappedValue.scale)
@@ -565,10 +569,16 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage 
         
         kmWrappedValue.draw(at: .zero, blendMode: .destinationIn, alpha: 1)
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        return newImage;
+        return newImage
     }
  
     
 }
+
+
+
+
+
+
 
 

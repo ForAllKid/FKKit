@@ -10,10 +10,11 @@ import UIKit
 
 extension UIFont: KMKitNamespaceWrappable {}
 
-
 public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIFont {
     
-    /// 包一层 便于后期更换
+    /// 创建字体
+    /// - Parameter size: 大小
+    /// - Parameter isBlod: 是否使用粗体
     static func fontOfSize(_ size: CGFloat, isBlod: Bool = false) -> UIFont {
         if isBlod {
             return UIFont.boldSystemFont(ofSize: size)

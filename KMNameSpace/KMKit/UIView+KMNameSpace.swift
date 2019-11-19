@@ -12,7 +12,8 @@ extension UIView: KMKitNamespaceWrappable {}
 
 
 public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
- 
+    
+    /// 边框颜色
     var borderColor: UIColor? {
         get {
             guard let color = kmWrappedValue.layer.borderColor else { return nil }
@@ -30,6 +31,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
     }
     
     
+    /// 边框线条粗细
     var borderWidth: CGFloat {
         get {
             return kmWrappedValue.layer.borderWidth
@@ -40,6 +42,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
     }
     
     
+    /// 圆角值
     var cornerRadius: CGFloat {
         get {
             return kmWrappedValue.layer.cornerRadius
@@ -51,7 +54,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
     }
     
     
-
+    /// 阴影颜色
     var shadowColor: UIColor? {
         get {
             guard let color = kmWrappedValue.layer.shadowColor else { return nil }
@@ -62,25 +65,29 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
         }
     }
     
-
+    
+    /// 阴影偏移量
     var shadowOffset: CGSize {
         get { kmWrappedValue.layer.shadowOffset }
         set { kmWrappedValue.layer.shadowOffset = newValue }
     }
     
-
+    
+    /// 阴影不透明度
     var shadowOpacity: Float {
         get { kmWrappedValue.layer.shadowOpacity }
         set { kmWrappedValue.layer.shadowOpacity = newValue }
     }
     
+    
+    /// 阴影圆角值
     var shadowRadius: CGFloat {
         get { kmWrappedValue.layer.shadowRadius }
         set { kmWrappedValue.layer.shadowRadius = newValue }
     }
     
     
-    
+    /// 截图
     var screenshot: UIImage? {
         UIGraphicsBeginImageContextWithOptions(kmWrappedValue.layer.frame.size, false, 0)
         defer {
@@ -95,6 +102,8 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
 
 public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
     
+    /// 添加一组子视图
+    /// - Parameter subviews: 子视图
     func addSubviews(_ subviews: [UIView]) {
         subviews.forEach { kmWrappedValue.addSubview($0) }
     }
