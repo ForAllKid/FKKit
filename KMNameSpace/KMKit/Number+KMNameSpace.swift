@@ -748,6 +748,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == CGFloa
 }
 
 
+
 // MARK: - Double
 
 extension Double: KMKitNamespaceWrappable { }
