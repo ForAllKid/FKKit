@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         
-        view.ef.parentViewController
+//        view.ef.parentViewController
          
 //
 //        view.backgroundColor = .groupTableViewBackground

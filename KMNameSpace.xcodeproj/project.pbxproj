@@ -192,76 +192,36 @@
 		0414B4E52383C6AD00675496 /* KMKit */ = {
 			isa = PBXGroup;
 			children = (
-				0414B4F72383C6AD00675496 /* KMNameSpace.swift */,
-				0414B4E62383C6AD00675496 /* UIKit */,
-				0414B4F82383C6AD00675496 /* Foundation */,
-				0414B5012383C6AD00675496 /* Utilities */,
-				0414B5032383C6AD00675496 /* Text */,
-				0414B5052383C6AD00675496 /* CoreAnimation */,
-			);
-			path = KMKit;
-			sourceTree = "<group>";
-		};
-		0414B4E62383C6AD00675496 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				0414B4E72383C6AD00675496 /* UIView+KMNameSpace.swift */,
-				0414B4E82383C6AD00675496 /* UIColor+KMNameSpace.swift */,
-				0414B4E92383C6AD00675496 /* UIViewController+KMNameSpace.swift */,
-				0414B4EA2383C6AD00675496 /* UIImage+KMNameSpace.swift */,
-				0414B4EB2383C6AD00675496 /* UIApplication+KMNameSpace.swift */,
-				0414B4EC2383C6AD00675496 /* UIImageView+KMNameSpace.swift */,
-				0414B4ED2383C6AD00675496 /* UIFont+KMNameSpace.swift */,
-				0414B4EE2383C6AD00675496 /* UISwitch+KMNameSpace.swift */,
-				0414B4EF2383C6AD00675496 /* UIView+reusable+KMNameSpace.swift */,
-				0414B4F02383C6AD00675496 /* UILabel+KMNameSpace.swift */,
-				0414B4F12383C6AD00675496 /* UIScrollView+KMNameSpace.swift */,
+				0414B4FB2383C6AD00675496 /* Array+KMNameSpace.swift */,
+				0414B5062383C6AD00675496 /* CALayer+KMNameSpace.swift */,
+				0414B4FC2383C6AD00675496 /* CGColor+KMNameSpace.swift */,
+				0414B4F92383C6AD00675496 /* CGImage+KMNameSpace.swift */,
+				0414B4FE2383C6AD00675496 /* Data+KMNameSpace.swift */,
+				0414B4FD2383C6AD00675496 /* Date+KMNameSpace.swift */,
 				0414B4F22383C6AD00675496 /* File.swift */,
-				0414B4F32383C6AD00675496 /* UITableView+KMNameSpace.swift */,
-				0414B4F42383C6AD00675496 /* UIDevice+KMNameSpace.swift */,
+				0414B4F72383C6AD00675496 /* KMNameSpace.swift */,
+				0414B5022383C6AD00675496 /* KMUtilities.swift */,
+				0414B5042383C6AD00675496 /* NAttributedString+KMNameSpace.swift */,
+				0414B5002383C6AD00675496 /* Notification+KMNameSpace.swift */,
+				0414B4FA2383C6AD00675496 /* Number+KMNameSpace.swift */,
+				0414B4FF2383C6AD00675496 /* String+KMNameSpace.swift */,
+				0414B4EB2383C6AD00675496 /* UIApplication+KMNameSpace.swift */,
 				0414B4F52383C6AD00675496 /* UIButton+KMNameSpace.swift */,
 				0414B4F62383C6AD00675496 /* UICollectionView+KMNameSpace.swift */,
+				0414B4E82383C6AD00675496 /* UIColor+KMNameSpace.swift */,
+				0414B4F42383C6AD00675496 /* UIDevice+KMNameSpace.swift */,
+				0414B4ED2383C6AD00675496 /* UIFont+KMNameSpace.swift */,
+				0414B4EA2383C6AD00675496 /* UIImage+KMNameSpace.swift */,
+				0414B4EC2383C6AD00675496 /* UIImageView+KMNameSpace.swift */,
+				0414B4F02383C6AD00675496 /* UILabel+KMNameSpace.swift */,
+				0414B4F12383C6AD00675496 /* UIScrollView+KMNameSpace.swift */,
+				0414B4EE2383C6AD00675496 /* UISwitch+KMNameSpace.swift */,
+				0414B4F32383C6AD00675496 /* UITableView+KMNameSpace.swift */,
+				0414B4E72383C6AD00675496 /* UIView+KMNameSpace.swift */,
+				0414B4EF2383C6AD00675496 /* UIView+reusable+KMNameSpace.swift */,
+				0414B4E92383C6AD00675496 /* UIViewController+KMNameSpace.swift */,
 			);
-			path = UIKit;
-			sourceTree = "<group>";
-		};
-		0414B4F82383C6AD00675496 /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-				0414B4F92383C6AD00675496 /* CGImage+KMNameSpace.swift */,
-				0414B4FA2383C6AD00675496 /* Number+KMNameSpace.swift */,
-				0414B4FB2383C6AD00675496 /* Array+KMNameSpace.swift */,
-				0414B4FC2383C6AD00675496 /* CGColor+KMNameSpace.swift */,
-				0414B4FD2383C6AD00675496 /* Date+KMNameSpace.swift */,
-				0414B4FE2383C6AD00675496 /* Data+KMNameSpace.swift */,
-				0414B4FF2383C6AD00675496 /* String+KMNameSpace.swift */,
-				0414B5002383C6AD00675496 /* Notification+KMNameSpace.swift */,
-			);
-			path = Foundation;
-			sourceTree = "<group>";
-		};
-		0414B5012383C6AD00675496 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				0414B5022383C6AD00675496 /* KMUtilities.swift */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		0414B5032383C6AD00675496 /* Text */ = {
-			isa = PBXGroup;
-			children = (
-				0414B5042383C6AD00675496 /* NAttributedString+KMNameSpace.swift */,
-			);
-			path = Text;
-			sourceTree = "<group>";
-		};
-		0414B5052383C6AD00675496 /* CoreAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				0414B5062383C6AD00675496 /* CALayer+KMNameSpace.swift */,
-			);
-			path = CoreAnimation;
+			path = KMKit;
 			sourceTree = "<group>";
 		};
 		2A241340EF9DD9CC89A7EF9A /* Pods */ = {
