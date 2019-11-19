@@ -11,7 +11,7 @@ import UIKit
 extension UIDevice: KMKitNamespaceWrappable {}
 
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == UIDevice {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == UIDevice {
     
     /// 获取已下载漫画章节占用的硬盘空间大小（Bytes）
     /// - Parameter path: 路径，如果文件不存在或者路径不合法，返回0
@@ -121,7 +121,7 @@ extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == UIDevice {
 
 
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIDevice {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIDevice {
 
     
     

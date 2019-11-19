@@ -9,7 +9,7 @@
 import UIKit
 
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UILabel {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UILabel {
     
     @discardableResult
     func textColor(name: String) -> KMKitNamespaceWrapper {
@@ -31,7 +31,7 @@ extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UILabel {
 
 }
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UILabel {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UILabel {
     
     static func initWith(fontSize: CGFloat, isBold: Bool, textColor: UIColor?, textAlignment:  NSTextAlignment?) -> UILabel {
         

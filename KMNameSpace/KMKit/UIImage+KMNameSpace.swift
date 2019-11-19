@@ -13,7 +13,7 @@ import Accelerate
 extension UIImage: KMKitNamespaceWrappable {}
 
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage {
     
     //MARK: - Create image
 

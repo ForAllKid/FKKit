@@ -11,7 +11,7 @@ import Foundation
 
 extension Date: KMKitNamespaceWrappable {}
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Date {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Date {
     
     
     
@@ -211,7 +211,7 @@ extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Date {
 
 
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Date {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Date {
     
     
     

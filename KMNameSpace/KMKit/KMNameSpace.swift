@@ -31,7 +31,7 @@ public protocol KMKitTypeWrapperProtocol {
     init(value: KMKitWrappedType)
 }
 
-public struct KMKitNamespaceWrapper<KMKitNameSpaceWrapperType>: KMKitTypeWrapperProtocol {
+public final class KMKitNamespaceWrapper<KMKitNameSpaceWrapperType>: KMKitTypeWrapperProtocol {
     public let kmWrappedValue: KMKitNameSpaceWrapperType
     public init(value: KMKitNameSpaceWrapperType) {
         self.kmWrappedValue = value

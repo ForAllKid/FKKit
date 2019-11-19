@@ -9,7 +9,7 @@
 import UIKit
 
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImageView {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImageView {
     
     
     func image(name: String) {
@@ -22,7 +22,7 @@ extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImageView {
 
 
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImageView {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImageView {
      
     func blur(withStyle style: UIBlurEffect.Style = .light) {
         let blurEffect = UIBlurEffect(style: style)
@@ -43,7 +43,7 @@ extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImageView {
 }
     
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImageView {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImageView {
     
     func download(
         from url: URL,

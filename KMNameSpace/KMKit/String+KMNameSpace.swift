@@ -11,7 +11,7 @@ import UIKit
 
 extension String: KMKitNamespaceWrappable {}
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == String {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == String {
     
     static func judgeAddZeroBeforeTheNum(targetID : Double) -> String {
         ""
@@ -321,7 +321,7 @@ extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == String {
 }
 
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == String {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == String {
     
     @discardableResult
     func slice(from start: Int, to end: Int) -> String {
@@ -341,7 +341,7 @@ extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == String {
 
 
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == String {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == String {
     
 
 }

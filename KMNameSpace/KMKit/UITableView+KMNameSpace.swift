@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UITableView {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UITableView {
     
     func registerCell<Cell: UITableViewCell>(_ cellType: Cell.Type, reuseIdentifier: String = Cell.KM.reuseIdentifier) {
         

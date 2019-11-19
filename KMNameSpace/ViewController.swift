@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.km.borderColor = .white
+        
+        
         
 //        view.ef.parentViewController
          

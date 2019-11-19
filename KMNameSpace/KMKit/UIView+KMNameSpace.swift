@@ -11,7 +11,7 @@ import UIKit
 extension UIView: KMKitNamespaceWrappable {}
 
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
  
     var borderColor: UIColor? {
         get {
@@ -93,7 +93,7 @@ extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
 }
 
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
     
     func addSubviews(_ subviews: [UIView]) {
         subviews.forEach { kmWrappedValue.addSubview($0) }
@@ -102,7 +102,7 @@ extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
 }
 
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
     
     static func removeCornerRectOnView(view: UIView) {
         view.layer.mask = nil

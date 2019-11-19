@@ -9,7 +9,7 @@
 import UIKit
 
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UICollectionView {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UICollectionView {
     
     func registerCell<Cell: UICollectionViewCell>(_ cell: Cell.Type, reuseIdentifier: String = Cell.KM.reuseIdentifier) {
         kmWrappedValue.register(cell.self, forCellWithReuseIdentifier: reuseIdentifier)

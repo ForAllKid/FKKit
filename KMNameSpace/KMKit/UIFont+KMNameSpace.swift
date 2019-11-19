@@ -11,7 +11,7 @@ import UIKit
 extension UIFont: KMKitNamespaceWrappable {}
 
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIFont {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIFont {
     
     /// 包一层 便于后期更换
     static func fontOfSize(_ size: CGFloat, isBlod: Bool = false) -> UIFont {

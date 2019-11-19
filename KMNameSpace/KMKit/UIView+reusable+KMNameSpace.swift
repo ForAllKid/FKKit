@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UICollectionReusableView {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UICollectionReusableView {
     
     static var reuseIdentifier: String {
         String(describing: Self.self)
@@ -17,7 +17,7 @@ extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UICollectionReu
 }
 
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UITableViewCell {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UITableViewCell {
     
     static var reuseIdentifier: String {
         String(describing: Self.self)

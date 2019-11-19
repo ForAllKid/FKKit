@@ -9,7 +9,7 @@
 import UIKit
 
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIScrollView {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIScrollView {
     
     
     func scrollToBottom(animated: Bool = true) {

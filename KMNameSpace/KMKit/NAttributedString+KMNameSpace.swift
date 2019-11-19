@@ -10,7 +10,7 @@ import Foundation
 
 extension NSAttributedString: KMKitNamespaceWrappable {}
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: NSAttributedString {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: NSAttributedString {
     
     
     var rangeOfAll: NSRange {

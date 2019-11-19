@@ -12,7 +12,7 @@ import UIKit
 extension CALayer: KMKitNamespaceWrappable {}
 
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: CALayer {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: CALayer {
     
     var snapshotImage: UIImage? {
         UIGraphicsBeginImageContextWithOptions(kmWrappedValue.bounds.size, kmWrappedValue.isOpaque, 0)

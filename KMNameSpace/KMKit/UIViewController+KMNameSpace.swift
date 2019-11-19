@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIViewController {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIViewController {
     
     
     func addNotificationObserver(name: Notification.Name, selector: Selector) {
@@ -27,7 +27,7 @@ extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIViewControlle
 }
 
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIViewController {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIViewController {
 
 
 }

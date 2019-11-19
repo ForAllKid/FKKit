@@ -10,7 +10,7 @@ import Foundation
 
 
 
-extension Data {
+public extension Data {
     
     enum ImageFormat {
         
@@ -28,7 +28,7 @@ extension Data {
 
 extension Data: KMKitNamespaceWrappable {}
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Data {
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Data {
     
     func getImageFormat() -> Data.ImageFormat  {
         var buffer = [UInt8](repeating: 0, count: 1)
