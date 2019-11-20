@@ -8,41 +8,41 @@
 
 import Foundation
 import UIKit
+import CommonCrypto
 
 extension String: KMKitNamespaceWrappable {}
 
 public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == String {
     
     static func judgeAddZeroBeforeTheNum(targetID : Double) -> String {
-        ""
-//        let str = String.init(format: "%.f", targetID)
-//        if str.count >= 9{
-//            return self.hanleNums(number: str)
-//        }else{
-//            let strr =  String.init(format: "%09.f", targetID)
-//            return self.hanleNums(number: strr)
-//        }
+        let str = String.init(format: "%.f", targetID)
+        if str.count >= 9{
+            return self.hanleNums(number: str)
+        }else{
+            let strr =  String.init(format: "%09.f", targetID)
+            return self.hanleNums(number: strr)
+        }
     }
     
-//    static func hanleNums(number: String) -> String {
-//        var str = number
-//
-//        let newString = str.km.slice(from: number.count % 3, to: number.count - number.count % 3)
-//        var strs = number
-//        newString = strs.km.slice(from: 0, to: strs.count % 3)
-//
-//        for i in stride(from: 0, to:str.count , by: 3){
-//            var sss = str
-//            sss.km.slice(from: i, to: i + 3)
-//            strs += "/\(sss)"
-//        }
-//        var strstemp = strs
-//        if strstemp.slice(from: 0, to: 1)  == "/"{
-//            strs.slice(from: 1, to: strs.count)
-//        }
-//        return strs
-//
-//    }
+    static func hanleNums(number: String) -> String {
+        let str = number
+
+        var newString = str.km.slice(from: number.count % 3, to: number.count - number.count % 3)
+        var strs = number
+        newString = strs.km.slice(from: 0, to: strs.count % 3)
+
+        for i in stride(from: 0, to:newString.count , by: 3){
+            let sss = str
+            sss.km.slice(from: i, to: i + 3)
+            strs += "/\(sss)"
+        }
+        let strstemp = strs
+        if strstemp.km.slice(from: 0, to: 1)  == "/"{
+            strs.km.slice(from: 1, to: strs.count)
+        }
+        return strs
+
+    }
     
     static func toArray(JSONString: String) -> Array<Any>? {
         
@@ -109,10 +109,9 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == String
         return string ?? "0"
     }
     
-    static func returnFormaterNumber(target:Double) -> String {
+    static func returnFormaterNumber(target: Double) -> String {
         
-        if target > 999999
-        {
+        if target > 999999 {
             return "999,999+"
         }
         
@@ -120,23 +119,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == String
         formatter.positiveFormat = "###,###"
         let string = formatter.string(from: NSNumber.init(value: target))
         return string ?? ""
-        
-        //        var result = ""
-        //        if (target < 100000) {
-        //            result = String(format:"%.f", target)
-        //        }else if(target < 1000000){ //6位
-        //            result = String(format:"%.1f万",target/10000.0)
-        //        }else if (target < 100000000){ //7-8位
-        //            let w = (Int)(target / 10000);
-        //            result = String(format:"%ld万",w);
-        //        }else if (target < 10000000000){ //9-10位
-        //            let w = target / 100000000.0
-        //            result = String(format:"%.1f亿",w)
-        //        }else{
-        //            let w = (Int)(target / 100000000);
-        //            result = String(format:"%ld亿",w)
-        //        }
-        //        return result
+ 
     }
     
     static func convertToJSONData(infoDict:Dictionary<String,Any>) -> String? {
@@ -284,25 +267,11 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == String
     }
     
     /// 内存大小字符串 转 字节
-    static func memoryStringToByte(string:String) -> Double{
-//        if string.contains("GB"){
-//            let count = string.replacingOccurrences(of: "GB", with: "").double() ?? 0
-//            return count * 1024 * 1024 * 1024
-//        }
-//
-//        if string.contains("MB") {
-//            let count = string.replacingOccurrences(of: "MB", with: "").double() ?? 0
-//            return count * 1024 * 1024
-//        }
-//
-//        if string.contains("KB"){
-//            let count = string.replacingOccurrences(of: "KB", with: "").double() ?? 0
-//            return count * 1024
-//        }
-//
-        return 0
+    static func memoryStringToByte(string:String) -> Double {
+        return string.km.toBytes
     }
     
+
     static func byteToString(byteNum: Int64) -> String{
         if byteNum == 0 {
             return "0M"
@@ -318,6 +287,42 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == String
         return CGFloat(value)
     }
     
+    
+    
+    func sizeWithFont(_ font: UIFont, constrainedToSize: CGSize, lineSpace: CGFloat = 0.0) -> CGSize {
+        
+        let nsstr = kmWrappedValue as NSString
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineBreakMode = .byWordWrapping
+        paragraphStyle.lineSpacing = lineSpace
+        
+        let attrs: [NSAttributedString.Key: Any] = [
+            .font: font,
+            .paragraphStyle: paragraphStyle
+        ]
+        let boundingRect = nsstr.boundingRect(
+            with: constrainedToSize,
+            options: .usesLineFragmentOrigin,
+            attributes: attrs,
+            context: nil
+        ).integral
+        
+        return boundingRect.size
+    }
+    
+    func subString(range: NSRange) -> String? {
+        
+        guard range.location + range.length <= kmWrappedValue.count else {
+            return nil
+        }
+        
+        let start = kmWrappedValue.index(kmWrappedValue.startIndex, offsetBy: range.location)  // 开始下标
+        let end = kmWrappedValue.index(start, offsetBy: range.length) // 结束下标
+        let subString = kmWrappedValue[start ..< end]
+        return String(subString)
+
+    }
 }
 
 
@@ -343,6 +348,45 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == String
 
 public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == String {
     
-
+    /// 内存大小字符串 转 字节
+    var toBytes: Double {
+        
+        if kmWrappedValue.contains("GB"){
+            let count = Double(kmWrappedValue.replacingOccurrences(of: "GB", with: "")) ?? 0
+            return count * 1024 * 1024 * 1024
+        }
+        
+        if kmWrappedValue.contains("MB") {
+            let count = Double(kmWrappedValue.replacingOccurrences(of: "MB", with: "")) ?? 0
+            return count * 1024 * 1024
+        }
+        
+        if kmWrappedValue.contains("KB"){
+            let count = Double(kmWrappedValue.replacingOccurrences(of: "KB", with: "")) ?? 0
+            return count * 1024
+        }
+        
+        return 0
+    }
+    
+    var MD5: String {
+        
+        let cStrl = kmWrappedValue.cString(using: .utf8)
+        let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: 16)
+        CC_MD5(cStrl, CC_LONG(strlen(cStrl!)), buffer)
+        
+        var md5String = ""
+        for idx in 0...15 {
+            let obcStrl = String(format: "%02x", buffer[idx]);
+            md5String.append(obcStrl);
+        }
+        
+        free(buffer)
+        return md5String
+        
+    }
+    
+    
+    
 }
 

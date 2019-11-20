@@ -40,6 +40,7 @@
 		0414B5212383C6AD00675496 /* NAttributedString+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B5042383C6AD00675496 /* NAttributedString+KMNameSpace.swift */; };
 		0414B5222383C6AD00675496 /* CALayer+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B5062383C6AD00675496 /* CALayer+KMNameSpace.swift */; };
 		049B13952383ECA100CA57CF /* FileManager+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049B13942383ECA100CA57CF /* FileManager+KMNameSpace.swift */; };
+		049B13972384CFF400CA57CF /* UIEdgeInsets+KMNameSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049B13962384CFF400CA57CF /* UIEdgeInsets+KMNameSpace.swift */; };
 		682CF01E5E471283E52B6826 /* Pods_KMNameSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A20A875B6F54BA036C88338 /* Pods_KMNameSpace.framework */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +101,7 @@
 		0414B5042383C6AD00675496 /* NAttributedString+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NAttributedString+KMNameSpace.swift"; sourceTree = "<group>"; };
 		0414B5062383C6AD00675496 /* CALayer+KMNameSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+KMNameSpace.swift"; sourceTree = "<group>"; };
 		049B13942383ECA100CA57CF /* FileManager+KMNameSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+KMNameSpace.swift"; sourceTree = "<group>"; };
+		049B13962384CFF400CA57CF /* UIEdgeInsets+KMNameSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+KMNameSpace.swift"; sourceTree = "<group>"; };
 		0D177EB0D12F37B778E16EF6 /* Pods-KMNameSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMNameSpace.debug.xcconfig"; path = "Target Support Files/Pods-KMNameSpace/Pods-KMNameSpace.debug.xcconfig"; sourceTree = "<group>"; };
 		5A20A875B6F54BA036C88338 /* Pods_KMNameSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KMNameSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79F9A2C9759E025E34812AAF /* Pods-KMNameSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMNameSpace.release.xcconfig"; path = "Target Support Files/Pods-KMNameSpace/Pods-KMNameSpace.release.xcconfig"; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				0414B4E72383C6AD00675496 /* UIView+KMNameSpace.swift */,
 				0414B4EF2383C6AD00675496 /* UIView+reusable+KMNameSpace.swift */,
 				0414B4E92383C6AD00675496 /* UIViewController+KMNameSpace.swift */,
+				049B13962384CFF400CA57CF /* UIEdgeInsets+KMNameSpace.swift */,
 			);
 			path = KMKit;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				0414B5132383C6AD00675496 /* UITableView+KMNameSpace.swift in Sources */,
 				0414B50E2383C6AD00675496 /* UISwitch+KMNameSpace.swift in Sources */,
 				0414B5112383C6AD00675496 /* UIScrollView+KMNameSpace.swift in Sources */,
+				049B13972384CFF400CA57CF /* UIEdgeInsets+KMNameSpace.swift in Sources */,
 				0414B5182383C6AD00675496 /* CGImage+KMNameSpace.swift in Sources */,
 				0414B50A2383C6AD00675496 /* UIImage+KMNameSpace.swift in Sources */,
 				0414B51A2383C6AD00675496 /* Array+KMNameSpace.swift in Sources */,

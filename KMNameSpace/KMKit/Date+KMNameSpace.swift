@@ -208,182 +208,207 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Date {
 
 
 
+// MARK: - Component Properties
+
 
 public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Date {
-    
-    
-    
-    // MARK: - Component Properties
-
+        
     /// Year component
     var year: Int {
-        Calendar.current.dateComponents([.year], from: kmWrappedValue).year ?? -1
+        Calendar.current.component(.year, from: kmWrappedValue)
     }
     
     /// Month component (1~12)
     var month: Int {
-        Calendar.current.dateComponents([.month], from: kmWrappedValue).month ?? -1
+        Calendar.current.component(.month, from: kmWrappedValue)
     }
     
     /// Day component (1~31)
     var day: Int {
-        Calendar.current.dateComponents([.day], from: kmWrappedValue).day ?? -1
+        Calendar.current.component(.day, from: kmWrappedValue)
     }
     
     /// Hour component (0~23)
     var hour: Int {
-        Calendar.current.dateComponents([.hour], from: kmWrappedValue).hour ?? -1
+        Calendar.current.component(.hour, from: kmWrappedValue)
     }
     
     /// Minute component (0~59)
     var minute: Int {
-        Calendar.current.dateComponents([.minute], from: kmWrappedValue).minute ?? -1
+        Calendar.current.component(.minute, from: kmWrappedValue)
     }
     
     /// Second component (0~59)
     var second: Int {
-        Calendar.current.dateComponents([.second], from: kmWrappedValue).second ?? -1
+        Calendar.current.component(.second, from: kmWrappedValue)
     }
     
     /// Nanosecond component
     var nanosecond: Int {
-        Calendar.current.dateComponents([.nanosecond], from: kmWrappedValue).second ?? -1
+        Calendar.current.component(.nanosecond, from: kmWrappedValue)
     }
     
     /// Weekday component (1~7, first day is kmWrappedValued on user setting)
     var weekday: Int {
-        Calendar.current.dateComponents([.weekday], from: kmWrappedValue).weekday ?? -1
+        Calendar.current.component(.weekday, from: kmWrappedValue)
     }
      
     /// WeekdayOrdinal component
     var weekdayOrdinal: Int {
-        Calendar.current.dateComponents([.weekdayOrdinal], from: kmWrappedValue).weekdayOrdinal ?? -1
+        Calendar.current.component(.weekdayOrdinal, from: kmWrappedValue)
     }
     
     /// WeekOfMonth component (1~5)
     var weekOfMonth: Int {
-        Calendar.current.dateComponents([.weekOfMonth], from: kmWrappedValue).weekOfMonth ?? -1
+        Calendar.current.component(.weekOfMonth, from: kmWrappedValue)
     }
      
     /// WeekOfYear component (1~53)
     var weekOfYear: Int {
-        Calendar.current.dateComponents([.weekOfYear], from: kmWrappedValue).weekOfYear ?? -1
+        Calendar.current.component(.weekOfYear, from: kmWrappedValue)
     }
     
     /// YearForWeekOfYear component
     var yearForWeekOfYear: Int {
-        Calendar.current.dateComponents([.yearForWeekOfYear], from: kmWrappedValue).yearForWeekOfYear ?? -1
+        Calendar.current.component(.yearForWeekOfYear, from: kmWrappedValue)
     }
    
     /// Quarter component
     var quarter: Int {
-        Calendar.current.dateComponents([.quarter], from: kmWrappedValue).quarter ?? -1
+        Calendar.current.component(.quarter, from: kmWrappedValue)
     }
+    
+}
+
+// MARK: - 时间段判断 所有的判断都是基于当前的日历
+
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Date {
      
-    /// whether the month is leap month
+    
+    /// 是否是闰月
     var isLeapMonth: Bool {
         Calendar.current.dateComponents([.quarter], from: kmWrappedValue).isLeapMonth ?? false
     }
     
-    /// whether the year is leap year
+    /// 是否是闰年（400的倍数或者 是4的倍数并且不能是100的倍数）
     var isLeapYear: Bool {
         let year = self.year
         return ((year % 400 == 0) || ((year % 100 != 0) && (year % 4 == 0)))
     }
-    
-    /// whether date is today (kmWrappedValued on current locale)
+        
+    /// 是否是今天（当前系统日历）
     var isToday: Bool {
-        if abs(kmWrappedValue.timeIntervalSinceNow) >= 60 * 60 * 24 {
-            return false
-        }
-        return Date().km.day == kmWrappedValue.km.day
+        return Calendar.current.isDateInToday(kmWrappedValue)
     }
-    
-    /// whether date is yesterday (kmWrappedValued on current locale)
+        
+    /// 是否是昨天(当前系统日历)
     var isYesterday: Bool {
-        
-        guard let added = kmWrappedValue.km.addDays(1) else {
-            return false
-        }
-        
-        return added.km.isToday
+        return Calendar.current.isDateInYesterday(kmWrappedValue)
     }
     
+    /// 是否是明天（当前系统日历）
+    var isTomorrow: Bool {
+        return Calendar.current.isDateInTomorrow(kmWrappedValue)
+    }
     
+    /// 是否在当前周内
+    var isCurrentWeek: Bool {
+        return Calendar.current.isDate(kmWrappedValue, equalTo: Date(), toGranularity: .weekOfYear)
+    }
     
-    // MARK: - Date modify
+    /// 是否在当前月内
+    var isInCurrentMonth: Bool {
+        return Calendar.current.isDate(kmWrappedValue, equalTo: Date(), toGranularity: .month)
+    }
+    
+    /// 是否在当前年内
+    var isInCurrentYear: Bool {
+        return Calendar.current.isDate(kmWrappedValue, equalTo: Date(), toGranularity: .year)
+    }
+    
+    /// 是否是过去（基于当前时间）
+    var isPast: Bool {
+        return kmWrappedValue < Date()
+    }
+    
+    /// 是否是将来（基于当前时间）
+    var isFuture: Bool {
+        return kmWrappedValue > Date()
+    }
+    
+}
+
+
+
+// MARK: - Date modify
+
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Date {
 
     
-    /// N年后的这个时候
+    /// 返回一个新的“日期”，该日期表示通过在给定日期上添加一定数量的值而计算出的日期。
+    ///
+    /// - Parameter component: .year, .month ....
+    /// - Parameter value: 值，可为负数
+    func adding(_ component: Calendar.Component, value: Int) -> Date? {
+        return Calendar.current.date(byAdding: component, value: value, to: kmWrappedValue)
+    }
+
+    
+    /// 递增年
     /// - Parameter years: 年数，可以为负数
     func addYears(_ years: Int) -> Date? {
-        let calendar = Calendar.current
-        var components = DateComponents()
-        components.year = years
-        return calendar.date(byAdding: components, to: kmWrappedValue, wrappingComponents: false)
+        return adding(.year, value: years)
     }
     
     
-    /// <#Description#>
-    /// - Parameter months: <#months description#>
+    /// 递增月
+    /// - Parameter months: 月，可为负数
     func addMonths(_ months: Int) -> Date? {
-        let calendar = Calendar.current
-        var components = DateComponents()
-        components.month = months
-        return calendar.date(byAdding: components, to: kmWrappedValue, wrappingComponents: false)
+        return adding(.month, value: months)
     }
 
     
-    /// <#Description#>
-    /// - Parameter weeks: <#weeks description#>
+    /// 递增周
+    /// - Parameter weeks: 周，可为负数
     func addWeeks(_ weeks: Int) -> Date? {
-        let calendar = Calendar.current
-        var components = DateComponents()
-        components.weekOfYear = weeks
-        return calendar.date(byAdding: components, to: kmWrappedValue, wrappingComponents: false)
+        return adding(.weekOfYear, value: weeks)
     }
 
     
-    /// <#Description#>
-    /// - Parameter days: <#days description#>
+    /// 递增天
+    /// - Parameter days: 天，可为负数
     func addDays(_ days: Int) -> Date? {
-        let aTimeInterval = kmWrappedValue.timeIntervalSinceReferenceDate + 86400 * TimeInterval(days)
-        let newDate = Date(timeIntervalSinceReferenceDate: aTimeInterval)
-        return newDate
+        return adding(.day, value: days)
     }
 
     
-    /// <#Description#>
-    /// - Parameter hours: <#hours description#>
+    /// 递增小时
+    /// - Parameter hours: 小时，可为负数
     func addHours(_ hours: Int) -> Date? {
-        let aTimeInterval = kmWrappedValue.timeIntervalSinceReferenceDate + 3600 * TimeInterval(hours)
-        let newDate = Date(timeIntervalSinceReferenceDate: aTimeInterval)
-        return newDate
+        return adding(.hour, value: hours)
     }
     
     
-    /// <#Description#>
-    /// - Parameter minutes: <#minutes description#>
+    /// 递增分钟
+    /// - Parameter minutes: 分钟，可为负数
     func addMinutes(_ minutes: Int) -> Date? {
-        let aTimeInterval = kmWrappedValue.timeIntervalSinceReferenceDate + 60 * TimeInterval(minutes)
-        let newDate = Date(timeIntervalSinceReferenceDate: aTimeInterval)
-        return newDate
+        return adding(.minute, value: minutes)
     }
     
     
-    /// <#Description#>
-    /// - Parameter seconds: <#seconds description#>
+    /// 递增秒
+    /// - Parameter seconds: 秒，可为负数
     func addSeconds(_ seconds: Int) -> Date? {
-        let aTimeInterval = kmWrappedValue.timeIntervalSinceReferenceDate + TimeInterval(seconds)
-        let newDate = Date(timeIntervalSinceReferenceDate: aTimeInterval)
-        return newDate
+        return adding(.second, value: seconds)
     }
 
     
-    
-    //MARK: -  Date Format
+}
+ 
+//MARK: -  格式化
 
-    
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Date {
+
     /// 格式化输出
     /// - Parameter format: 输出格式
     /// - Parameter timeZone: 时区
@@ -414,11 +439,11 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Date {
     }
 
     
-    /// <#Description#>
-    /// - Parameter dateString: <#dateString description#>
-    /// - Parameter format: <#format description#>
-    /// - Parameter timeZone: <#timeZone description#>
-    /// - Parameter locale: <#locale description#>
+    /// 根据指定的格式将一个时间字符串转换为时间，转换过程如果为`nil`表示转换失败
+    /// - Parameter dateString: 时间字符串
+    /// - Parameter format: 格式
+    /// - Parameter timeZone: 时区
+    /// - Parameter locale: 地区
     func dateWithString(_ dateString: String, format: String = "yyyy-MM-dd HH:mm:ss", timeZone: TimeZone? = .current, locale: Locale? = .current) -> Date? {
         
         let formatter = DateFormatter()
@@ -437,8 +462,8 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Date {
     }
     
     
-    /// <#Description#>
-    /// - Parameter dateString: <#dateString description#>
+    /// ISO标准格式格式化
+    /// - Parameter dateString: 时间字符串
     func dateWithISOFormatString(_ dateString: String) -> Date? {
         let formatter = DateFormatter()
         formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale

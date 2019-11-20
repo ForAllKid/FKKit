@@ -110,6 +110,24 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
     
 }
 
+public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
+    
+    /// 设置背景色
+    /// - Parameter color: 颜色
+    func backgroundColor(color: UIColor) {
+        kmWrappedValue.backgroundColor = color
+    }
+    
+    
+    /// 设置背景色
+    /// - Parameter name: 颜色值
+    func backgroundColor(name: String) {
+        let color = UIColor.KM.color(name: name)
+        backgroundColor(color: color)
+    }
+}
+
+
 
 public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
     
@@ -161,4 +179,339 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
 }
 
 
+
+
+#if canImport(SnapKit)
+
+import SnapKit
+
+public extension KMKit {
+    
+    static let baseTag: Int = 19900527
+    
+    struct LineDirection: OptionSet {
+        
+        public typealias RawValue = Int
+
+        public var rawValue: Int
+        
+        public init(rawValue : LineDirection.RawValue) {
+            self.rawValue = rawValue
+        }
+
+    }
+    
+    struct Inset {
+        var left: CGFloat = 0.0
+        var right: CGFloat = 0.0
+    }
+
+}
+
+
+extension KMKit.LineDirection {
+    
+    static let top = KMKit.LineDirection(rawValue: 1 << 0)
+    static let bottom = KMKit.LineDirection(rawValue: 1 << 1)
+    static let left = KMKit.LineDirection(rawValue: 1 << 2)
+    static let right = KMKit.LineDirection(rawValue: 1 << 3)
+    static let centerX = KMKit.LineDirection(rawValue: 1 << 4)
+    static let centerY = KMKit.LineDirection(rawValue: 1 << 5)
+    static let around: KMKit.LineDirection = [top, left, bottom, right]
+    
+}
+
+
+
+extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
+    
+    
+    /// 在一个border添加线条
+    /// - Parameter direction: 方向
+    /// - Parameter color: 颜色
+    /// - Parameter inset: 缩进
+    /// - Parameter borderWidth: 线条宽度或者高度
+    func addLine(direction: KMKit.LineDirection, color: UIColor, inset: KMKit.Inset = KMKit.Inset(), borderWidth: CGFloat = 0.5) {
+
+        /// 添加上边
+        if direction.contains(.top) {
+            
+            let line = dequeueLineView(direction: .top)
+            line.backgroundColor = color
+            
+            line.snp.remakeConstraints { maker in
+                maker.top.equalTo(kmWrappedValue)
+                maker.left.equalTo(kmWrappedValue).offset(inset.left)
+                maker.right.equalTo(kmWrappedValue).inset(inset.right)
+                maker.height.equalTo(borderWidth)
+            }
+
+        }
+        
+        /// 添加左边
+        if direction.contains(.left) {
+            
+            let line = dequeueLineView(direction: .left)
+            line.backgroundColor = color
+            
+            line.snp.remakeConstraints { maker in
+                maker.top.equalTo(kmWrappedValue).offset(inset.left)
+                maker.left.equalTo(kmWrappedValue)
+                maker.bottom.equalTo(kmWrappedValue).inset(inset.right)
+                maker.width.equalTo(borderWidth)
+            }
+
+        }
+        
+        /// 添加下边
+        if direction.contains(.bottom) {
+            
+            let line = dequeueLineView(direction: .bottom)
+            line.backgroundColor = color
+            
+            line.snp.remakeConstraints { maker in
+                maker.left.equalTo(kmWrappedValue).offset(inset.left)
+                maker.bottom.equalTo(kmWrappedValue)
+                maker.right.equalTo(kmWrappedValue).inset(inset.right)
+                maker.height.equalTo(borderWidth)
+            }
+
+        }
+        
+        /// 添加右边
+        if direction.contains(.right) {
+            
+            let line = dequeueLineView(direction: .right)
+            line.backgroundColor = color
+
+            line.snp.remakeConstraints { maker in
+                maker.top.equalTo(kmWrappedValue).offset(inset.left)
+                maker.bottom.equalTo(kmWrappedValue).inset(inset.right)
+                maker.right.equalTo(kmWrappedValue)
+                maker.width.equalTo(borderWidth)
+            }
+
+        }
+        
+        /// 添加垂直居中
+        if direction.contains(.centerX) {
+            
+            let line = dequeueLineView(direction: .centerX)
+            line.backgroundColor = color
+            
+            line.snp.remakeConstraints { maker in
+                maker.top.equalTo(kmWrappedValue).offset(inset.left)
+                maker.centerX.equalTo(kmWrappedValue)
+                maker.bottom.equalTo(kmWrappedValue).inset(inset.right)
+                maker.width.equalTo(borderWidth)
+            }
+            
+        }
+        
+        /// 添加水平居中
+        if direction.contains(.centerY) {
+
+            let line = dequeueLineView(direction: .centerY)
+            line.backgroundColor = color
+            
+            line.snp.remakeConstraints { maker in
+                maker.left.equalTo(kmWrappedValue).offset(inset.left)
+                maker.centerY.equalTo(kmWrappedValue)
+                maker.right.equalTo(kmWrappedValue).inset(inset.right)
+                maker.height.equalTo(borderWidth)
+            }
+        
+        }
+    }
+    
+    
+    /// 移除某条线
+    ///
+    /// - Parameter direction: 方向
+    func removeLineWithDirection(direction: KMKit.LineDirection) {
+        
+        if direction.contains(.top) {
+            if let view = kmWrappedValue.viewWithTag(getTagWithDirection(direction: .top)){
+                view.removeFromSuperview()
+            }
+        }
+        
+        if direction.contains(.left){
+            if let view = kmWrappedValue.viewWithTag(getTagWithDirection(direction: .left)){
+                view.removeFromSuperview()
+            }
+        }
+        
+        if direction.contains(.bottom){
+            if let view = kmWrappedValue.viewWithTag(getTagWithDirection(direction: .bottom)){
+                view.removeFromSuperview()
+            }
+        }
+        
+        if direction.contains(.right){
+            if let view = kmWrappedValue.viewWithTag(getTagWithDirection(direction: .right)){
+                view.removeFromSuperview()
+            }
+        }
+        
+        if direction.contains(.centerX){
+            if let view = kmWrappedValue.viewWithTag(getTagWithDirection(direction: .centerX)){
+                view.removeFromSuperview()
+            }
+        }
+        
+        if direction.contains(.centerY){
+            if let view = kmWrappedValue.viewWithTag(getTagWithDirection(direction: .centerY)){
+                view.removeFromSuperview()
+            }
+        }
+    }
+    
+    
+    /// 隐藏某条线
+    ///
+    /// - Parameter direction: 方向
+    func hideLineWithDirection(direction: KMKit.LineDirection) {
+        setLineHideState(direction: direction, isHidden: true)
+    }
+    
+    func showLineWithDirection(direction: KMKit.LineDirection){
+        setLineHideState(direction: direction, isHidden: false)
+    }
+    
+    func setLineColor(color: UIColor, direction: KMKit.LineDirection){
+        if direction.contains(.top) {
+            if let view = kmWrappedValue.viewWithTag(getTagWithDirection(direction: .top)) {
+                view.backgroundColor = color
+            }
+        }
+        
+        if direction.contains(.left){
+            if let view = kmWrappedValue.viewWithTag(getTagWithDirection(direction: .left)) {
+                view.backgroundColor = color
+            }
+        }
+        
+        if direction.contains(.bottom){
+            if let view = kmWrappedValue.viewWithTag(getTagWithDirection(direction: .bottom)) {
+                view.backgroundColor = color
+            }
+        }
+        
+        if direction.contains(.right){
+            if let view = kmWrappedValue.viewWithTag(getTagWithDirection(direction: .right)){
+                view.backgroundColor = color
+            }
+        }
+        
+        if direction.contains(.centerX){
+            if let view = kmWrappedValue.viewWithTag(getTagWithDirection(direction: .centerX)){
+                view.backgroundColor = color
+            }
+        }
+        
+        if direction.contains(.centerY){
+            if let view = kmWrappedValue.viewWithTag(getTagWithDirection(direction: .centerY)){
+                view.backgroundColor = color
+            }
+        }
+    }
+    
+
+    /// 获取某条线
+    /// - Parameter direction: 方向
+    func getLineWithDirection(direction: KMKit.LineDirection) -> UIView? {
+        if direction.contains(.top) {
+            return kmWrappedValue.viewWithTag(getTagWithDirection(direction: .top))
+        }
+        
+        if direction.contains(.left){
+            return kmWrappedValue.viewWithTag(getTagWithDirection(direction: .left))
+        }
+        
+        if direction.contains(.bottom){
+            return kmWrappedValue.viewWithTag(getTagWithDirection(direction: .bottom))
+        }
+        
+        if direction.contains(.right){
+            return kmWrappedValue.viewWithTag(getTagWithDirection(direction: .right))
+        }
+        
+        if direction.contains(.centerX){
+            return kmWrappedValue.viewWithTag(getTagWithDirection(direction: .centerX))
+        }
+        
+        if direction.contains(.centerY){
+            return kmWrappedValue.viewWithTag(getTagWithDirection(direction: .centerY))
+        }
+        
+        return nil
+    }
+    
+    // MARK: Private
+    
+    /// 根据方向获取某个line, 如果没有会创建一个，并且添加在view上
+    /// - Parameter direction: 方向
+    private func dequeueLineView(direction: KMKit.LineDirection) -> UIView {
+        
+        let tag = getTagWithDirection(direction: .right)
+
+        if let v = kmWrappedValue.viewWithTag(tag) {
+            return v
+        }
+        
+        let v = UIView()
+        kmWrappedValue.addSubview(v)
+        v.tag = tag
+        return v
+    }
+    
+    
+    private func getTagWithDirection(direction: KMKit.LineDirection) -> Int {
+        let tag = KMKit.baseTag + direction.rawValue
+        return tag
+    }
+    
+    private func setLineHideState(direction: KMKit.LineDirection, isHidden: Bool) {
+        
+        if direction.contains(.top) {
+            if let view = kmWrappedValue.viewWithTag(getTagWithDirection(direction: .top)){
+                view.isHidden = isHidden
+            }
+        }
+        
+        if direction.contains(.left){
+            if let view = kmWrappedValue.viewWithTag(getTagWithDirection(direction: .left)){
+                view.isHidden = isHidden
+            }
+        }
+        
+        if direction.contains(.bottom){
+            if let view = kmWrappedValue.viewWithTag(getTagWithDirection(direction: .bottom)){
+                view.isHidden = isHidden
+            }
+        }
+        
+        if direction.contains(.right){
+            if let view = kmWrappedValue.viewWithTag(getTagWithDirection(direction: .right)){
+                view.isHidden = isHidden
+            }
+        }
+        
+        if direction.contains(.centerX){
+            if let view = kmWrappedValue.viewWithTag(getTagWithDirection(direction: .centerX)){
+                view.isHidden = true
+            }
+        }
+        
+        if direction.contains(.centerY){
+            if let view = kmWrappedValue.viewWithTag(getTagWithDirection(direction: .centerY)){
+                view.isHidden = true
+            }
+        }
+    }
+    
+}
+
+#endif
 
