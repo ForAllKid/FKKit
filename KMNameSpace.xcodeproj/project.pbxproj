@@ -35,7 +35,7 @@
 		0414B51C2383C6AD00675496 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4FD2383C6AD00675496 /* Date+.swift */; };
 		0414B51D2383C6AD00675496 /* Data+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4FE2383C6AD00675496 /* Data+.swift */; };
 		0414B51E2383C6AD00675496 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B4FF2383C6AD00675496 /* String+.swift */; };
-		0414B5202383C6AD00675496 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B5022383C6AD00675496 /* Utilities.swift */; };
+		0414B5202383C6AD00675496 /* CGRect+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B5022383C6AD00675496 /* CGRect+.swift */; };
 		0414B5212383C6AD00675496 /* NAttributedString+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B5042383C6AD00675496 /* NAttributedString+.swift */; };
 		0414B5222383C6AD00675496 /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414B5062383C6AD00675496 /* CALayer+.swift */; };
 		049B13952383ECA100CA57CF /* FileManager+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049B13942383ECA100CA57CF /* FileManager+.swift */; };
@@ -95,7 +95,7 @@
 		0414B4FD2383C6AD00675496 /* Date+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		0414B4FE2383C6AD00675496 /* Data+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+.swift"; sourceTree = "<group>"; };
 		0414B4FF2383C6AD00675496 /* String+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
-		0414B5022383C6AD00675496 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		0414B5022383C6AD00675496 /* CGRect+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+.swift"; sourceTree = "<group>"; };
 		0414B5042383C6AD00675496 /* NAttributedString+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NAttributedString+.swift"; sourceTree = "<group>"; };
 		0414B5062383C6AD00675496 /* CALayer+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
 		049B13942383ECA100CA57CF /* FileManager+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+.swift"; sourceTree = "<group>"; };
@@ -213,7 +213,7 @@
 				0414B4F32383C6AD00675496 /* UITableView+.swift */,
 				0414B4E72383C6AD00675496 /* UIView+.swift */,
 				0414B4E92383C6AD00675496 /* UIViewController+.swift */,
-				0414B5022383C6AD00675496 /* Utilities.swift */,
+				0414B5022383C6AD00675496 /* CGRect+.swift */,
 			);
 			path = KMKit;
 			sourceTree = "<group>";
@@ -415,7 +415,7 @@
 				0414B51E2383C6AD00675496 /* String+.swift in Sources */,
 				049B13952383ECA100CA57CF /* FileManager+.swift in Sources */,
 				0414B5072383C6AD00675496 /* UIView+.swift in Sources */,
-				0414B5202383C6AD00675496 /* Utilities.swift in Sources */,
+				0414B5202383C6AD00675496 /* CGRect+.swift in Sources */,
 				0414B5102383C6AD00675496 /* UILabel+.swift in Sources */,
 				0414B5142383C6AD00675496 /* UIDevice+.swift in Sources */,
 				0414B51D2383C6AD00675496 /* Data+.swift in Sources */,

@@ -18,19 +18,19 @@ public extension KMKitWrapper where KMKitWrapperType: UIViewController {
     /// - Parameter name: 通知名字
     /// - Parameter selector: 方法
     func addNotificationObserver(name: Notification.Name, selector: Selector, object: Any? = nil) {
-        NotificationCenter.default.addObserver(self, selector: selector, name: name, object: object)
+        NotificationCenter.default.addObserver(kmWrappedValue, selector: selector, name: name, object: object)
     }
 
     
     /// 移除一个通知
     /// - Parameter name: 通知名字
     func removeNotificationObserver(name: Notification.Name) {
-        NotificationCenter.default.removeObserver(self, name: name, object: nil)
+        NotificationCenter.default.removeObserver(kmWrappedValue, name: name, object: nil)
     }
     
     /// 移除所有通知
     func removeNotificationsObserver() {
-        NotificationCenter.default.removeObserver(self)
+        NotificationCenter.default.removeObserver(kmWrappedValue)
     }
     
 }
