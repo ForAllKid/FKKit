@@ -9,19 +9,26 @@
 
 import Foundation
 
-public protocol KMKitNamespaceWrappable {
+
+public struct KMKit {
+    
+}
+
+
+
+public protocol KMKitCompatible {
     associatedtype KMKitWrapperType
     var km: KMKitWrapperType { get }
     static var KM: KMKitWrapperType.Type { get }
 }
 
-public extension KMKitNamespaceWrappable {
-    var km: KMKitNamespaceWrapper<Self> {
-        return KMKitNamespaceWrapper(value: self)
+public extension KMKitCompatible {
+    var km: KMKitWrapper<Self> {
+        return KMKitWrapper(value: self)
     }
     
-    static var KM: KMKitNamespaceWrapper<Self>.Type {
-        return KMKitNamespaceWrapper.self
+    static var KM: KMKitWrapper<Self>.Type {
+        return KMKitWrapper.self
     }
 }
 
@@ -31,9 +38,9 @@ public protocol KMKitTypeWrapperProtocol {
     init(value: KMKitWrappedType)
 }
 
-public final class KMKitNamespaceWrapper<KMKitNameSpaceWrapperType>: KMKitTypeWrapperProtocol {
-    public let kmWrappedValue: KMKitNameSpaceWrapperType
-    public init(value: KMKitNameSpaceWrapperType) {
+public final class KMKitWrapper<KMKitWrapperType>: KMKitTypeWrapperProtocol {
+    public let kmWrappedValue: KMKitWrapperType
+    public init(value: KMKitWrapperType) {
         self.kmWrappedValue = value
     }
 }

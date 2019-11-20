@@ -19,8 +19,8 @@ import CoreImage
 import UIKit
 #endif
 
-extension CGImage: KMKitNamespaceWrappable { }
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == CGImage {
+extension CGImage: KMKitCompatible { }
+public extension KMKitWrapper where KMKitWrapperType == CGImage {
     
     #if canImport(CoreImage)
     var ciImage: CIImage {

@@ -10,13 +10,13 @@ import UIKit
 import ImageIO
 import Accelerate
 
-extension UIImage: KMKitNamespaceWrappable {}
+extension UIImage: KMKitCompatible {}
 
 
 
 // MARK: - 创建图片
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage {
+public extension KMKitWrapper where KMKitWrapperType: UIImage {
     
     
     /// 根据一个emoji表情创建一张指定大小的图片
@@ -111,7 +111,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage 
 
 // MARK: - 获取图片信息
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage {
+public extension KMKitWrapper where KMKitWrapperType: UIImage {
     
     
     /// 是否包含alpha通道
@@ -149,7 +149,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage 
 
 // MARK: - 修改图片
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage {
+public extension KMKitWrapper where KMKitWrapperType: UIImage {
     
     /// 根据特定大小，指定的contentMode重新绘制图片
     /// - Parameter rect: 绘制的区域
@@ -157,10 +157,9 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage 
     /// - Parameter clipsToBounds: 图片超出部分是否裁剪
     func draw(in rect: CGRect, contentMode: UIView.ContentMode = .scaleToFill, clipsToBounds: Bool = false) {
         
-        let drawRect = KMKit.rectFitWithContentMode(
-            rect: rect,
-            size: kmWrappedValue.size,
-            contentMode: contentMode
+        let drawRect = rect.km.fitWithContentMode(
+            contentMode,
+            targetSize: kmWrappedValue.size
         )
         
         guard drawRect.size != .zero else {
@@ -552,7 +551,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage 
 
 // MARK: - 图片着色以及blur样式（blur样式待完善）
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIImage {
+public extension KMKitWrapper where KMKitWrapperType: UIImage {
 
     /// 重新着色
     /// - Parameter color: 着色值

@@ -9,10 +9,10 @@
 import UIKit
 
 
-extension UIDevice: KMKitNamespaceWrappable {}
+extension UIDevice: KMKitCompatible {}
 
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == UIDevice {
+public extension KMKitWrapper where KMKitWrapperType == UIDevice {
     
     
     func blank<T>(of type: T.Type) -> T {
@@ -72,7 +72,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == UIDevi
 
 //MARK: - Device Information
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIDevice {
+public extension KMKitWrapper where KMKitWrapperType: UIDevice {
     
     /// 系统版本
     static var systemVersion: Double {

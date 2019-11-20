@@ -25,9 +25,9 @@ import CoreImage
 #endif
 
 
-extension Color: KMKitNamespaceWrappable {}
+extension Color: KMKitCompatible {}
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: Color {
+public extension KMKitWrapper where KMKitWrapperType: Color {
 
     static func color(name: String) -> Color {
         let c = Color.KM.color(hexString: name) ?? .white
@@ -37,7 +37,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: Color {
 }
 
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: Color {
+public extension KMKitWrapper where KMKitWrapperType: Color {
         
     /// 获取一个随机颜色
     static var random: Color {
@@ -179,7 +179,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: Color {
 }
 
 // MARK: - Methods
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: Color {
+public extension KMKitWrapper where KMKitWrapperType: Color {
     
 
     /// Blend two Colors
@@ -259,7 +259,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: Color {
 }
 
 // MARK: - Initializers
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: Color {
+public extension KMKitWrapper where KMKitWrapperType: Color {
 
     static func color(red: Int, green: Int, blue: Int, transparency: CGFloat = 1) -> UIColor? {
         

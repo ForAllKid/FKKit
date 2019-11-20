@@ -12,7 +12,7 @@ import UIKit
  方法里面的参数使用了可选类型，原因是因为有些情况下会删除一些图片或者文字颜色
  */
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIButton {
+public extension KMKitWrapper where KMKitWrapperType: UIButton {
     
     func titleColor(name: String?, state: UIControl.State) {
         

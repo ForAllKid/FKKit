@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UISwitch {
+public extension KMKitWrapper where KMKitWrapperType: UISwitch {
     
     func toggle(animated: Bool = true) {
         kmWrappedValue.setOn(!kmWrappedValue.isOn, animated: animated)

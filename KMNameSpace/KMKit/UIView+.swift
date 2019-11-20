@@ -8,10 +8,10 @@
 
 import UIKit
 
-extension UIView: KMKitNamespaceWrappable {}
+extension UIView: KMKitCompatible {}
 
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
+public extension KMKitWrapper where KMKitWrapperType: UIView {
     
     /// 边框颜色
     var borderColor: UIColor? {
@@ -100,7 +100,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
 }
 
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
+public extension KMKitWrapper where KMKitWrapperType: UIView {
     
     /// 添加一组子视图
     /// - Parameter subviews: 子视图
@@ -110,7 +110,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
     
 }
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
+public extension KMKitWrapper where KMKitWrapperType: UIView {
     
     /// 设置背景色
     /// - Parameter color: 颜色
@@ -129,7 +129,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
 
 
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
+public extension KMKitWrapper where KMKitWrapperType: UIView {
     
     static func removeCornerRectOnView(view: UIView) {
         view.layer.mask = nil
@@ -180,6 +180,42 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
 
 
 
+// MARK: - 复用标识
+
+public extension KMKitWrapper where KMKitWrapperType: UICollectionReusableView {
+    
+    /// UICollectionView的子视图的默认复用标识，默认为类名
+    static var reuseIdentifier: String {
+        String(describing: KMKitWrapperType.self)
+    }
+    
+}
+
+
+public extension KMKitWrapper where KMKitWrapperType: UITableViewCell {
+    
+    /// UITableView的子视图的默认复用标识，默认为类名
+    static var reuseIdentifier: String {
+        String(describing: KMKitWrapperType.self)
+    }
+    
+}
+
+
+public extension KMKitWrapper where KMKitWrapperType: UITableViewHeaderFooterView {
+    
+    /// UITableView的子视图的默认复用标识，默认为类名
+    static var reuseIdentifier: String {
+        String(describing: KMKitWrapperType.self)
+    }
+    
+}
+
+
+
+
+
+// MARK: - 添加线条
 
 #if canImport(SnapKit)
 
@@ -223,7 +259,7 @@ extension KMKit.LineDirection {
 
 
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIView {
+extension KMKitWrapper where KMKitWrapperType: UIView {
     
     
     /// 在一个border添加线条

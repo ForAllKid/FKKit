@@ -9,35 +9,35 @@
 import UIKit
 
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UILabel {
+public extension KMKitWrapper where KMKitWrapperType: UILabel {
     
     
     /// 设置文字颜色
     /// - Parameter name: 颜色值，例如“#333333”， “0x333333”
-    @discardableResult func textColor(name: String) -> KMKitNamespaceWrapper {
+    @discardableResult func textColor(name: String) -> KMKitWrapper {
         kmWrappedValue.textColor = UIColor.KM.color(name: name)
-        return KMKitNamespaceWrapper(value: kmWrappedValue)
+        return KMKitWrapper(value: kmWrappedValue)
     }
     
     /// 设置文字对齐方式
     /// - Parameter alignment: 对齐方式
-    @discardableResult func textAlignment(_ alignment: NSTextAlignment) -> KMKitNamespaceWrapper {
+    @discardableResult func textAlignment(_ alignment: NSTextAlignment) -> KMKitWrapper {
         kmWrappedValue.textAlignment = alignment
-        return KMKitNamespaceWrapper(value: kmWrappedValue)
+        return KMKitWrapper(value: kmWrappedValue)
     }
     
     /// 设置字体
     /// - Parameter font: 字体
-    @discardableResult func font(_ font: UIFont) -> KMKitNamespaceWrapper {
+    @discardableResult func font(_ font: UIFont) -> KMKitWrapper {
         kmWrappedValue.font = font
-        return KMKitNamespaceWrapper(value: kmWrappedValue)
+        return KMKitWrapper(value: kmWrappedValue)
     }
 
 }
 
 // MARK: - 快速创建
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UILabel {
+public extension KMKitWrapper where KMKitWrapperType: UILabel {
     
     /// 创建一个label
     /// - Parameter fontSize: 文字大小

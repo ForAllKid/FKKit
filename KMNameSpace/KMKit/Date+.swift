@@ -9,9 +9,9 @@
 import Foundation
 
 
-extension Date: KMKitNamespaceWrappable {}
+extension Date: KMKitCompatible {}
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Date {
+public extension KMKitWrapper where KMKitWrapperType == Date {
     
     static var _formatter = DateFormatter()
     
@@ -211,7 +211,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Date {
 // MARK: - Component Properties
 
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Date {
+public extension KMKitWrapper where KMKitWrapperType == Date {
         
     /// Year component
     var year: Int {
@@ -282,7 +282,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Date {
 
 // MARK: - 时间段判断 所有的判断都是基于当前的日历
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Date {
+public extension KMKitWrapper where KMKitWrapperType == Date {
      
     
     /// 是否是闰月
@@ -342,7 +342,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Date {
 
 // MARK: - Date modify
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Date {
+public extension KMKitWrapper where KMKitWrapperType == Date {
 
     
     /// 返回一个新的“日期”，该日期表示通过在给定日期上添加一定数量的值而计算出的日期。
@@ -407,7 +407,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Date {
  
 //MARK: -  格式化
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Date {
+public extension KMKitWrapper where KMKitWrapperType == Date {
 
     /// 格式化输出
     /// - Parameter format: 输出格式

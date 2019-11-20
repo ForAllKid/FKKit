@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UITableView {
+public extension KMKitWrapper where KMKitWrapperType: UITableView {
     
     /// 注册一类cell
     /// - Parameter cellType: cell的类型

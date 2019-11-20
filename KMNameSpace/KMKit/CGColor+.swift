@@ -10,9 +10,9 @@ import Foundation
 
 import CoreImage
 
-extension CGColor: KMKitNamespaceWrappable {}
+extension CGColor: KMKitCompatible {}
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == CGColor {
+public extension KMKitWrapper where KMKitWrapperType == CGColor {
     
     var ciColor: CIColor {
         return CIColor(cgColor: kmWrappedValue)

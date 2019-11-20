@@ -9,7 +9,7 @@
 import UIKit
 
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIScrollView {
+public extension KMKitWrapper where KMKitWrapperType: UIScrollView {
     
     
     /// 滚动到底部
@@ -28,7 +28,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIScroll
 }
 
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIScrollView {
+public extension KMKitWrapper where KMKitWrapperType: UIScrollView {
     
     /// 获取UIScrollView(包含子类)的截图，整个contentSize
     var contentSnapshot: UIImage? {

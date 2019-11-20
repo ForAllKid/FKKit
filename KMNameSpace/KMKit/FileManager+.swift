@@ -9,10 +9,10 @@
 import Foundation
 
 
-extension FileManager: KMKitNamespaceWrappable {}
+extension FileManager: KMKitCompatible {}
 
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: FileManager {
+extension KMKitWrapper where KMKitWrapperType: FileManager {
     
 
     /// 获取某个路径下的文件大小

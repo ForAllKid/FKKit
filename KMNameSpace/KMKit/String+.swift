@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 import CommonCrypto
 
-extension String: KMKitNamespaceWrappable {}
+extension String: KMKitCompatible {}
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == String {
+public extension KMKitWrapper where KMKitWrapperType == String {
     
     static func judgeAddZeroBeforeTheNum(targetID : Double) -> String {
         let str = String.init(format: "%.f", targetID)
@@ -326,7 +326,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == String
 }
 
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == String {
+public extension KMKitWrapper where KMKitWrapperType == String {
     
     @discardableResult
     func slice(from start: Int, to end: Int) -> String {
@@ -346,7 +346,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == String
 
 
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == String {
+public extension KMKitWrapper where KMKitWrapperType == String {
     
     /// 内存大小字符串 转 字节
     var toBytes: Double {

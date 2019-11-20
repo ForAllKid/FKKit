@@ -9,13 +9,13 @@
 import QuartzCore
 import UIKit
 
-extension CALayer: KMKitNamespaceWrappable {}
+extension CALayer: KMKitCompatible {}
 
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: CALayer {
+public extension KMKitWrapper where KMKitWrapperType: CALayer {
     
     /// 获取截图
-    var snapshotImage: UIImage? {
+    var snapshot: UIImage? {
         
         UIGraphicsBeginImageContextWithOptions(
             kmWrappedValue.bounds.size,
@@ -29,23 +29,25 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: CALayer 
         guard let ctx = UIGraphicsGetCurrentContext() else {
             return nil
         }
+        
         kmWrappedValue.render(
             in: ctx
         )
+        
         let image = UIGraphicsGetImageFromCurrentImageContext()
         return image
     }
     
 
     var transformDepth: CGFloat {
-        kmWrappedValue.transform.m34
+        return kmWrappedValue.transform.m34
     }
     
     
     /// 映射UIView中对应的mode
     var contentMode: UIView.ContentMode {
         get {
-            CALayer.CAGravityToUIViewContentMode(gravity: kmWrappedValue.contentsGravity)
+            return CALayer.CAGravityToUIViewContentMode(gravity: kmWrappedValue.contentsGravity)
         }
     }
 }

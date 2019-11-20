@@ -9,9 +9,9 @@
 import UIKit
 import CoreText
 
-extension NSAttributedString: KMKitNamespaceWrappable {}
+extension NSAttributedString: KMKitCompatible {}
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: NSAttributedString {
+public extension KMKitWrapper where KMKitWrapperType: NSAttributedString {
     
     var rangeOfAll: NSRange {
         .init(location: 0, length: kmWrappedValue.length)
@@ -19,7 +19,7 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: NSAttrib
 
 }
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == NSMutableAttributedString {
+public extension KMKitWrapper where KMKitWrapperType == NSMutableAttributedString {
     
 
     func setFont(_ font: UIFont?, range: NSRange) {

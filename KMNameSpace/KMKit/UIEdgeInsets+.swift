@@ -8,11 +8,11 @@
 
 import UIKit
 
-extension UIEdgeInsets: KMKitNamespaceWrappable {
+extension UIEdgeInsets: KMKitCompatible {
 
 }
 
-extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == UIEdgeInsets {
+extension KMKitWrapper where KMKitWrapperType == UIEdgeInsets {
     
     var horizontal: CGFloat {
         return kmWrappedValue.left + kmWrappedValue.right

@@ -16,9 +16,9 @@ import UIKit
 
 // MARK: - Int  Int8  Int16  Int32  Int64   UInt  UInt8  UInt16  UInt32  UInt64
 
-extension Int: KMKitNamespaceWrappable {}
+extension Int: KMKitCompatible {}
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Int {
+public extension KMKitWrapper where KMKitWrapperType == Int {
     
     // Convert
     var bool: Bool {
@@ -76,9 +76,9 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Int {
 }
 
 
-extension Int8: KMKitNamespaceWrappable {}
+extension Int8: KMKitCompatible {}
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Int8 {
+public extension KMKitWrapper where KMKitWrapperType == Int8 {
     
     // Convert
     var bool: Bool {
@@ -136,9 +136,9 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Int8 {
 }
 
 
-extension Int16: KMKitNamespaceWrappable {}
+extension Int16: KMKitCompatible {}
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Int16 {
+public extension KMKitWrapper where KMKitWrapperType == Int16 {
     
     // Convert
     var bool: Bool {
@@ -196,9 +196,9 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Int16 
 }
 
 
-extension Int32: KMKitNamespaceWrappable {}
+extension Int32: KMKitCompatible {}
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Int32 {
+public extension KMKitWrapper where KMKitWrapperType == Int32 {
     
     // Convert
     var bool: Bool {
@@ -257,9 +257,9 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Int32 
 
 
 
-extension Int64: KMKitNamespaceWrappable {}
+extension Int64: KMKitCompatible {}
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Int64 {
+public extension KMKitWrapper where KMKitWrapperType == Int64 {
     
     // Convert
     var bool: Bool {
@@ -318,9 +318,9 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Int64 
 
 
 
-extension UInt: KMKitNamespaceWrappable {}
+extension UInt: KMKitCompatible {}
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == UInt {
+public extension KMKitWrapper where KMKitWrapperType == UInt {
     
     // Convert
     var bool: Bool {
@@ -378,9 +378,9 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == UInt {
 }
 
 
-extension UInt8: KMKitNamespaceWrappable {}
+extension UInt8: KMKitCompatible {}
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == UInt8 {
+public extension KMKitWrapper where KMKitWrapperType == UInt8 {
     
     // Convert
     var bool: Bool {
@@ -438,8 +438,8 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == UInt8 
 }
 
 
-extension UInt16: KMKitNamespaceWrappable {}
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == UInt16 {
+extension UInt16: KMKitCompatible {}
+public extension KMKitWrapper where KMKitWrapperType == UInt16 {
     
     // Convert
     var bool: Bool {
@@ -497,8 +497,8 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == UInt16
 }
 
 
-extension UInt32: KMKitNamespaceWrappable {}
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == UInt32 {
+extension UInt32: KMKitCompatible {}
+public extension KMKitWrapper where KMKitWrapperType == UInt32 {
     
     // Convert
     var bool: Bool {
@@ -556,8 +556,8 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == UInt32
 }
 
 
-extension UInt64: KMKitNamespaceWrappable {}
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == UInt64 {
+extension UInt64: KMKitCompatible {}
+public extension KMKitWrapper where KMKitWrapperType == UInt64 {
     
     // Convert
     var bool: Bool {
@@ -618,8 +618,8 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == UInt64
 // MARK: - Float
 
 
-extension Float: KMKitNamespaceWrappable { }
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Float {
+extension Float: KMKitCompatible { }
+public extension KMKitWrapper where KMKitWrapperType == Float {
     
     // Convert
     var bool: Bool {
@@ -682,8 +682,8 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Float 
 // MARK: - CGFloat
 
 
-extension CGFloat: KMKitNamespaceWrappable { }
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == CGFloat {
+extension CGFloat: KMKitCompatible { }
+public extension KMKitWrapper where KMKitWrapperType == CGFloat {
     
     #if os(iOS)
     static let screenWidth: CGFloat = UIScreen.main.bounds.size.width
@@ -751,8 +751,8 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == CGFloa
 
 // MARK: - Double
 
-extension Double: KMKitNamespaceWrappable { }
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Double {
+extension Double: KMKitCompatible { }
+public extension KMKitWrapper where KMKitWrapperType == Double {
     
     // Convert
     var bool: Bool {
@@ -811,8 +811,8 @@ public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Double
 
 // MARK: - Bool
 
-extension Bool: KMKitNamespaceWrappable {}
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Bool {
+extension Bool: KMKitCompatible {}
+public extension KMKitWrapper where KMKitWrapperType == Bool {
     
     
     /// false.int -> 0

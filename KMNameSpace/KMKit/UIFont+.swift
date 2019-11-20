@@ -8,9 +8,9 @@
 
 import UIKit
 
-extension UIFont: KMKitNamespaceWrappable {}
+extension UIFont: KMKitCompatible {}
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIFont {
+public extension KMKitWrapper where KMKitWrapperType: UIFont {
     
     /// 创建字体
     /// - Parameter size: 大小

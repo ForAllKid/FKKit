@@ -26,9 +26,9 @@ public extension Data {
     
 }
 
-extension Data: KMKitNamespaceWrappable {}
+extension Data: KMKitCompatible {}
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType == Data {
+public extension KMKitWrapper where KMKitWrapperType == Data {
     
     func getImageFormat() -> Data.ImageFormat  {
         var buffer = [UInt8](repeating: 0, count: 1)

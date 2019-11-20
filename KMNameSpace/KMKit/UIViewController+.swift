@@ -8,7 +8,11 @@
 
 import UIKit
 
-public extension KMKitNamespaceWrapper where KMKitNameSpaceWrapperType: UIViewController {
+extension UIViewController: KMKitCompatible {
+    
+}
+
+public extension KMKitWrapper where KMKitWrapperType: UIViewController {
     
     /// 添加通知
     /// - Parameter name: 通知名字
