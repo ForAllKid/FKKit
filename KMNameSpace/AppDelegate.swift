@@ -17,9 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+//        let images = (1 ..< 9).map { index -> UIImage in
+//            let string = "readerloading_\(index)"
+//            let img = UIImage(named: string)
+//            return img!
+//        }
+        
+        
+        
         return true
     }
 
+    
 
 
 }

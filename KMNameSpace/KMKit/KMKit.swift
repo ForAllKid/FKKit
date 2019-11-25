@@ -39,7 +39,7 @@ public protocol KMKitTypeWrapperProtocol {
 }
 
 public final class KMKitWrapper<KMKitWrapperType>: KMKitTypeWrapperProtocol {
-    public let kmWrappedValue: KMKitWrapperType
+    public var kmWrappedValue: KMKitWrapperType
     public init(value: KMKitWrapperType) {
         self.kmWrappedValue = value
     }
